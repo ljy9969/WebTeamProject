@@ -1,15 +1,22 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout as django_logout, \
     login as django_login, authenticate
+from django.contrib import auth
 from users.forms import LoginForm
 from django.http import HttpResponse
 
 def login(request):
-    login_form = LoginForm()
-    context = {
-        'my_form': login_form
-    }
-    return render(request, 'users/login.html', context)
+    if request.method == 'POST':
+        user_name = request.POST['user_name']
+        password = request.POST['password']
+        user = authenticate(request, username=user_name, password=password)
+        if user is not None:
+            auth.login(request, user)
+            return redirect('/')
+        else:
+            return render(request, 'users/login.html', {'error': 'user_name or password is incorrect.'})
+    else:
+        return render(request, 'users/login.html')
 
 def logout(request):
     django_logout(request)
