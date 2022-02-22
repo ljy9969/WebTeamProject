@@ -8,7 +8,7 @@ from django.conf import settings
 urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html'), name='home'),  # Home Page
     path('admin/', admin.site.urls),                                          # Admin Page
-    path('main/', include('main.urls')),
-    path('users/', include('users.urls')),
+    path('main/', include('main.urls')),                                      # login 후 Home Page
+    path('users/', include('users.urls')),                                    # login, 회원가입 page
 ] + static(settings.MEDIA_URL,
            document_root=settings.MEDIA_ROOT)
