@@ -1,0 +1,7 @@
+anaconda - (WebTeamProject)
+
+conda install django
+conda install mysqlclient
+conda install pillow
+conda install pip
+conda install bootstrap4
