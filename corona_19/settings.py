@@ -71,7 +71,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'corona_db',
         'USER': 'root',
-        'PASSWORD': 'dlwldus79',
+        'PASSWORD': 'dlwldus79', # 내 걸로 바꿔 쓰기
         'HOST': '127.0.0.1',
         'PORT': '3306'
     }
