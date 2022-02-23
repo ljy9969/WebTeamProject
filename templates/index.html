@@ -4,24 +4,7 @@
 {% block html_header %}
     <title>COVID-19</title>
 
-{#    <meta charset="utf-8">#}
-{#    <meta http-equiv="X-UA-Compatible" content="IE=edge">#}
-{##}
-{#    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">#}
-{#    <meta name="author" content="보건복지부, 코로나바이러스감염증-19(COVID-19), 질병관리청">#}
-{#    <meta name="keywords" content="코로나바이러스감염증-19(COVID-19), 코로나바이러스감염증-19, 코로나바이러스, 보건복지부">#}
-{#    <meta name="description" content="코로나바이러스감염증-19 정식 홈페이지로 발생현황, 국내발생현황, 국외발생현황, 시도별발생현황, 대상별 유의사항,  생활 속 거리 두기, 공적마스크 공급현황, 피해지원정책, 홍보자료, FAQ, 관련기관(보건소, 선별진료소 찾기), 정부 브리핑 안내">#}
-{#    <meta name="copyright" content="보건복지부">#}
-{##}
-{#    <meta property="og:url" content="/">#}
-{#    <meta property="og:type" content="website">#}
-{#    <meta property="og:site_name" content="코로나바이러스감염증-19(COVID-19)">#}
-{#    <meta property="og:locale" content="ko">#}
-{#    <meta property="og:title" content="코로나바이러스감염증-19(COVID-19)">#}
-{#    <meta property="og:description" content="코로나바이러스감염증-19 정식 홈페이지로 발생현황, 국내발생현황, 국외발생현황, 시도별발생현황, 대상별 유의사항,  생활 속 거리 두기, 공적마스크 공급현황, 피해지원정책, 홍보자료, FAQ, 관련기관(보건소, 선별진료소 찾기), 정부 브리핑 안내">#}
-{#    <meta property="og:image" content="/static/image/header/homeimg_new.jpg">#}
-
-    <link rel="icon" type="image/png" sizes="64x64" href="/static/main/img/header/header_icon.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/static/main/img/header/icon.png">
     <link rel="stylesheet" href="/static/main/css/main_sub1.css">
     <link rel="stylesheet" href="/static/main/css/main_sub2.css">
     <link rel="stylesheet" href="/static/main/css/main_sub3.css">
@@ -32,47 +15,6 @@
     <script src="/static/main/js/main_sub1.js"></script>
     <script src="/static/main/js/main_sub4.js"></script>
 
-{#    <script type="text/javaScript" language="javascript">#}
-{#        function fn_goMenu(url, brd_id, brd_gubun, data_Gubun){#}
-{##}
-{#            $("#brdId").val(brd_id);#}
-{#            $("#brdGubun").val(brd_gubun);#}
-{#            $("#dataGubun").val(data_Gubun);#}
-{##}
-{#            var frm = $("#menuFrm");#}
-{#            frm.attr("action", url);#}
-{#            frm.submit();#}
-{#        }#}
-{#        function search( where ){#}
-{#            var thisForm = $("#"+ where);#}
-{#            var thisSearch = $(thisForm).find(".searchTerm");#}
-{#            var cont = "";#}
-{#            $(thisSearch).each(function() {#}
-{#                cont += $(this).val();#}
-{#            });#}
-{#            //특수문자 체크#}
-{#            if (containsChars(cont,"~!@#$%^&*()+|`=\\[]{};:'\".<>/?")) {#}
-{#                alert("특수문자는 제외하고 검색해주시기 바랍니다.");#}
-{#                $(thisSearch).val("");#}
-{#                event.preventDefault();#}
-{#                return false;#}
-{#            }else if ( cont == "" || cont == null || cont == undefined){#}
-{#                alert("검색어를 입력하세요");#}
-{#                $(thisSearch).focus();#}
-{#                event.preventDefault();#}
-{#                return false;#}
-{#            }#}
-{#            return true;#}
-{#        }#}
-{#        function fn_goHostUrl(){#}
-{#            if(wCatch() == 'p'){#}
-{#                window.open("https://www.g-health.kr/portal/health/pubHealthSearch/list.do?rows=5&cpage=1&cl_cd=71&c_view=1&bbsId=U00198&menuNo=200452");#}
-{#            } else {#}
-{#                window.open("https://www.g-health.kr/mobile/m03/m01_02.do?cm_cd=71");#}
-{#            }#}
-{#        }#}
-{#    </script>#}
-
     <link rel="stylesheet" href="/static/main/css/main.css">
     <script src="/static/main/js/Chart.min.js"></script>
     <script src="/static/main/js/chartjs-plugin-datalabels.min.js"></script>
@@ -81,24 +23,12 @@
 {% endblock %}
 
 {% block html_body %}
-<form name="menuFrm" id="menuFrm" method="get">
-    <input name="brdId" id="brdId" type="hidden" />
-    <input name="brdGubun" id="brdGubun" type="hidden" />
-    <input name="dataGubun" id="dataGubun" type="hidden" />
-    <input name="ncvContSeq" id="ncvContSeq" type="hidden" />
-    <input name="contSeq" id="contSeq" type="hidden" />
-    <input name="board_id" id="board_id" type="hidden" />
-
-<div class="wrap nj">
-    <div class="w_catch">
-        <div class="wc_p t_dp_n m_dp_n"><span class="hdn">너비 1180px 이상</span></div>
-        <div class="wc_t p_dp_n m_dp_n"><span class="hdn">너비 768px - 1179px</span></div>
-        <div class="wc_m p_dp_n t_dp_n"><span class="hdn">너비 767px 이하</span></div>
-    </div>
     <!-- Navigation -->
     <div class="navigation t_dp_n m_dp_n">
         <div>
             <div class="n_left"><h1 class="corona_h1"><a href="/">코로나바이러스감염증-19<span>(COVID-19)</span></a></h1></div>
+            <br><br>
+            <div class="n_right"><a href="/users/login/">로그인</a></div>
         </div>
     </div>
     <br>
@@ -108,13 +38,13 @@
         <div>
                 <div id="gnb" class="gnb t_dp_n m_dp_n">
                     <ul>
-                        <li><a href="/info/">병원 & 약국</a>
+                        <li><a href="/maps/">병원 & 약국</a>
                         </li>
                         <li><a href="/guide/">코로나 증상 및 행동지침</a>
                         </li>
-                        <li><a href="/bbs/">전문의에게 물어보세요</a>
+                        <li><a href="/self-diagnosis/">자가진단</a>
                         </li>
-                        <li><a href="/users/login/">로그인</a>
+                        <li><a href="/bbs/">전문의에게 물어보세요</a>
                         </li>
                     </ul>
                 </div>
@@ -135,14 +65,13 @@
                                 <a class="btn_prev" href="/static/main/img/main/btn_pre.png"><span class="hdn">팝업존 이전보기</span></a>
                                 <a class="btn_next" href="/static/main/img/main/btn_next.png"><span class="hdn">팝업존 다음보기</span></a>
                                 <div class="slide_control">
-                                    <a class="btn_play" href="#"><span class="hdn">팝업존 재생</span></a>
                                     <a class="btn_pause" href="/static/main/img/main/ico_pause.png"><span class="hdn">팝업존 정지</span></a>
                                 </div>
                             </div>
                             <div class="slide_list">
                                 <div class="slide_list">
                                     <ul>
-                                        <li><a target="_blank" href=" https://www.kdca.go.kr/board/board.es?mid=a20507020000&amp;bid=0019&amp;act=view&amp;list_no=718596&amp;tag=&amp;nPage=1  "><img alt="코로나19 확진을 받은 환자 및 밀접접촉자 (가족, 동거인)을 위한 안내문 자세히 보기" src="/static/main/img/banner/banner2.jpg" /></a></li><li><a target="_blank" href=" https://youtu.be/RO8H8Fjahp0 "><img alt="누구나 따라할 수 있어요! 코로나19 자가검사키트 사용법과 행동요령 (식품의약품안전처, 질병관리청)" src="/static/main/img/banner/banner3.jpg" /></a></li><li><a target="_blank" href=" https://www.youtube.com/embed/kdca?list=PLQ1C5YbGRe_ICEIyhKlFv5CrENv38quKk&amp;autoplay=1 "><img alt="코로나 바이러스감염증-19 정부대응발표 LIVE 시청 가능! 자세히보기" src="/static/main/img/banner/banner4.jpg" /></a></li><li><a target="_blank" href=" http://www.mohw.go.kr/react/al/sal0301vw.jsp?PAR_MENU_ID=04&amp;MENU_ID=0403&amp;page=1&amp;CONT_SEQ=370247 "><img alt="내일부터 ‘거리두기’ 조정 실시(2.19~3.13)" src="/static/main/img/banner/banner1.png" /></a></li>
+                                        <li><a target="_blank" href=" https://www.kdca.go.kr/board/board.es?mid=a20507020000&amp;bid=0019&amp;act=view&amp;list_no=718596&amp;tag=&amp;nPage=1  "><img alt="코로나19 확진을 받은 환자 및 밀접접촉자 (가족, 동거인)을 위한 안내문 자세히 보기" sizes="500x500" src="/static/main/img/banner/banner2.jpg" /></a></li><li><a target="_blank" href=" https://youtu.be/RO8H8Fjahp0 "><img alt="누구나 따라할 수 있어요! 코로나19 자가검사키트 사용법과 행동요령 (식품의약품안전처, 질병관리청)" src="/static/main/img/banner/banner3.jpg" /></a></li><li><a target="_blank" href=" https://www.youtube.com/embed/kdca?list=PLQ1C5YbGRe_ICEIyhKlFv5CrENv38quKk&amp;autoplay=1 "><img alt="코로나 바이러스감염증-19 정부대응발표 LIVE 시청 가능! 자세히보기" src="/static/main/img/banner/banner4.jpg" /></a></li><li><a target="_blank" href=" http://www.mohw.go.kr/react/al/sal0301vw.jsp?PAR_MENU_ID=04&amp;MENU_ID=0403&amp;page=1&amp;CONT_SEQ=370247 "><img alt="내일부터 ‘거리두기’ 조정 실시(2.19~3.13)" src="/static/main/img/banner/banner1.png" /></a></li>
                                     </ul>
                                 </div>
                             </div>
