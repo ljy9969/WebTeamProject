@@ -1,0 +1,515 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block html_header %}
+    <title>COVID-19</title>
+
+    <link rel="icon" type="image/png" sizes="64x64" href="/static/main/img/header/icon.png">
+ 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/main/css/main_sub2.css">
+    <link rel="stylesheet" href="/static/main/css/main_sub3.css">
+    <link rel="stylesheet" href="/static/main/css/main_sub4.css">
+
+    <script src="/static/main/js/jquery-1.11.2.min.js"></script>
+    <script src="/static/main/js/main_sub3.js"></script>
+    <script src="/static/main/js/main_sub1.js"></script>
+    <script src="/static/main/js/main_sub4.js"></script>
+
+    <link rel="stylesheet" href="/static/main/css/main.css">
+    <script src="/static/main/js/Chart.min.js"></script>
+    <script src="/static/main/js/chartjs-plugin-datalabels.min.js"></script>
+    <script src="/static/main/js/chart_kr.js?ver=20211101"></script>
+
+
+
+    <script>
+    function link_url(link_url) {
+        document.location.href = link_url;
+    }
+    </script>
+
+{% endblock %}
+
+{% block html_body %}
+    <!-- Navigation -->
+
+    <div class="mainlive_container" id="content">
+        <div class="container">
+            <div>
+                <div class="liveboard_layout">
+                    <div class="m_con_layout">
+                        <h2 class="hdn">홈페이지 정보콘텐츠</h2>
+                        <!-- // 슬라이드 배너 시작 -->
+                        <div class="m_popupzone">
+                            <div class="slide_btn">
+                                <a class="btn_prev" href="/static/main/img/main/btn_pre.png"><span class="hdn">팝업존 이전보기</span></a>
+                                <a class="btn_next" href="/static/main/img/main/btn_next.png"><span class="hdn">팝업존 다음보기</span></a>
+                                <div class="slide_control">
+                                    <a class="btn_pause" href="/static/main/img/main/ico_pause.png"><span class="hdn">팝업존 정지</span></a>
+                                </div>
+                            </div>
+                            <div class="slide_list">
+                                <div class="slide_list">
+                                    <ul>
+                                        <li><a target="_blank" href=" https://www.kdca.go.kr/board/board.es?mid=a20507020000&amp;bid=0019&amp;act=view&amp;list_no=718596&amp;tag=&amp;nPage=1  "><img alt="코로나19 확진을 받은 환자 및 밀접접촉자 (가족, 동거인)을 위한 안내문 자세히 보기" sizes="500x500" src="/static/main/img/banner/banner2 - 복사본.jpg" /></a></li><li><a target="_blank" href=" https://youtu.be/RO8H8Fjahp0 "><img alt="누구나 따라할 수 있어요! 코로나19 자가검사키트 사용법과 행동요령 (식품의약품안전처, 질병관리청)" src="/static/main/img/banner/banner3 - 복사본.jpg" /></a></li><li><a target="_blank" href=" https://www.youtube.com/embed/kdca?list=PLQ1C5YbGRe_ICEIyhKlFv5CrENv38quKk&amp;autoplay=1 "><img alt="코로나 바이러스감염증-19 정부대응발표 LIVE 시청 가능! 자세히보기" src="/static/main/img/banner/banner4 - 복사본.jpg" /></a></li><li><a target="_blank" href=" http://www.mohw.go.kr/react/al/sal0301vw.jsp?PAR_MENU_ID=04&amp;MENU_ID=0403&amp;page=1&amp;CONT_SEQ=370247 "><img alt="내일부터 ‘거리두기’ 조정 실시(2.19~3.13)" src="/static/main/img/banner/banner1.png - 복사본" /></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 슬라이드 배너 종료-->
+                    </div>
+                    <!-- // 예방접종 현황 시작 -->
+                    <div class="vaccineNum">
+                        <h2 class="title1">예방접종현황<span class="livedate">(02.21. 00시 기준, '21.2.26. 이후 누계, 단위: %, 명)</span><a href="https://ncv.kdca.go.kr/mainStatus.es?mid=a11702000000" class="more" target="_blank" title="새창">자세히보기</a></h2>
+                        <div>
+                            <div class="vaccine_list">
+                                <div class="inner cl_b_aftr">
+                                    <div class="box">
+                                        <div class="item"><span>1차접종</span></div>
+                                        <div>
+                                            <ul>
+                                                <li class="percent">87.3<span>%</span></li>
+                                                <li class="person"><span>누적</span>44,799,973</li>
+                                                <li class="person"><span>신규</span>305 <img src="/static/image/main/vaccine_up_icon2.png" alt=""></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box">
+                                        <div class="item"><span>2차접종</span></div>
+                                        <div>
+                                            <ul>
+                                                <li class="percent">86.3<span>%</span></li>
+                                                <li class="person"><span>누적</span>44,300,971</li>
+                                                <li class="person"><span>신규</span>520 <img src="/static/image/main/vaccine_up_icon2.png" alt=""></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="box sixty_up">
+                                        <div class="item"><span>3차접종</span></div>
+                                        <div>
+                                            <ul>
+                                                <li class="percent">59.4<span>%</span></li>
+                                                <li class="person"><span>누적</span>30,464,700</li>
+                                                <li class="person"><span>신규</span>7,253 <img src="/static/image/main/vaccine_up_icon2.png" alt=""></li>
+                                                <li class="person"><span>60세이상</span>87.6%</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="child_list">
+                                <div class="item"><span>청소년 접종률</span></div>
+                                <div class="inner cl_b_aftr">
+                                    <div class="box">
+                                        <ul>
+                                            <li class="object"><span>1차접종</span></li>
+                                            <li class="percent">82.3<span>%</span></li>
+                                        </ul>
+                                        <ul>
+                                            <li class="old"><span>16-18세</span></li>
+                                            <li class="person"><span>1차접종</span>89.8%</li>
+                                            <li class="person"><span>2차접종</span>87.3%</li>
+                                        </ul>
+                                    </div>
+                                    <div class="box">
+                                        <ul>
+                                            <li class="object"><span>2차접종</span></li>
+                                            <li class="percent">78.6<span>%</span></li>
+                                        </ul>
+                                        <ul>
+                                            <li class="old"><span>13-15세</span></li>
+                                            <li class="person"><span>1차접종</span>75.1%</li>
+                                            <li class="person"><span>2차접종</span>70.2%</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 예방접종 현황 종료 -->
+                    <!--m_toggle-->
+                    <div class="liveToggleOuter">
+                        <div>
+                            <div class="live_left">
+                                <!-- // 발생현황 시작 -->
+                                <div class="occurrenceStatus">
+                                    <h2 class="title1">발생현황<span class="livedate">(2.21. 00시 기준, '20.1.3. 이후 누계, 단위: 명)</span><a href="http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun=" class="more" target="_blank" title="새창">자세히보기</a></h2>
+                                    <div class="occur_graph">
+                                        <table class="ds_table">
+                                            <colgroup>
+                                                <col style="width: 22%;">
+                                                <col style="width: 19.5%;">
+                                                <col style="width: 19.5%;">
+                                                <col style="width: 19.5%;">
+                                                <col style="width: 19.5%;">
+                                            </colgroup>
+                                            <caption>발생현황에 관한 표 - 사망, 위중증, 입원자, 확진을 일일 및 인구당 기준으로 구성</caption>
+                                            <thead>
+                                            <tr>
+                                                <th scope="col"><span>구분</span></th>
+                                                <th scope="col"><span>사망</span></th>
+                                                <th scope="col"><span>재원 위중증</span></th>
+                                                <th scope="col"><span>신규 입원</span></th>
+                                                <th scope="col"><span>확진</span></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <th scope="row"><span>일일</span></th>
+                                                <td><span>45</span></td>
+                                                <td><span>480</span></td>
+                                                <td><span>1,382</span></td>
+                                                <td><span>95,362</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><span>최근 7일간<br>일평균</span></th>
+                                                <td><span>49</span></td>
+                                                <td><span>389</span></td>
+                                                <td><span>1,479</span></td>
+                                                <td><span>93,277</span></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    <div class="occur_num">
+                                        <div class="box"><span>(누적)사망</span>7,450</div>
+                                        <div class="box"><span>(누적)확진</span>2,058,184</div>
+                                    </div>
+                                </div>
+                                <!-- // 발생현황 종료 -->
+                                <!-- // 병상현황 시작 -->
+                                <div class="hospitalNum">
+                                    <h2 class="title1">병상현황<span class="livedate">(02.20. 17시 기준, 단위 : %, 개)</span></h2>
+                                    <div class="hospitalStatus">
+                                        <table class="ds_table">
+                                            <colgroup>
+                                                <col style="width: 40%;">
+                                                <col style="width: 20%;">
+                                                <col style="width: 20%;">
+                                                <col style="width: 20%;">
+                                            </colgroup>
+                                            <caption>병상현황 관한 표 - 사망, 위중증, 입원자, 확진을 일일 및 인구당 기준으로 구성</caption>
+                                            <thead>
+                                            <tr>
+                                                <th scope="col"><span>구분</span></th>
+                                                <th scope="col"><span>가동률</span></th>
+                                                <th scope="col"><span>보유병상</span></th>
+                                                <th scope="col"><span>가용병상</span></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <th scope="row"><span>중환자 병상 <br>(중증환자전담 치료병상)</span></th>
+                                                <td><span>35.4%</span></td>
+                                                <td><span>2,664</span></td>
+                                                <td><span>1,721</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><span>일반 병상 <br>(감염병전담 병원(중등중))</span></th>
+                                                <td><span>47.6%</span></td>
+                                                <td><span>20,029</span></td>
+                                                <td><span>10,500</span></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- // 병상현황 종료 -->
+                                <div class="liveQlinkOuter">
+                                    <h3 class="hdn">배너 모음</h3>
+                                    <ul class="quick_banner_new">
+                                        <li>
+                                            <a href="https://www.mohw.go.kr/react/popup_200128.html" target="_blank" title="새창"><span>선별진료소 · 임시선별검사소</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://ncv.kdca.go.kr/menu.es?mid=a10116020000" target="_blank" title="새창"><span>코로나19 예방접종 바로알기</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--퀵배너 바로가기 //-->
+                            </div><!-- live_left -->
+                            <!-- 지역별단계 / 시도별 확진자 현황  -->
+                            <div class="live_right">
+                                <div class="weeklyWrap">
+                                    <h2 class="title1">주간 발생 추이<span class="livedate">(단위 : 명)</span></h2>
+                                    <div class="weeklyStatus">
+                                        <div class="weekly_chart_list">
+                                            <div class="chart_box">
+                                                <button class="weekly_chart_btn">사망 주간 발생 추이 <span class="text">펼쳐보기</span></button>
+                                                <div class="inner">
+                                                    <h4 class="tit">사망</h4>
+                                                    <canvas id="weekly_smj"></canvas>
+                                                    <div class="remarks">
+                                                        <ul>
+                                                            <li><img src="/static/image/chart/bar_legend_1.png" alt="">사망자수 (주간 합계)</li>
+                                                            <li><img src="/static/image/chart/line_legend_1.png" alt="">인구 10만명당 발생률</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="hdn">
+                                                    <table class="chart_hdn_data smj_hdn_data">
+                                                        <caption>주간 사망자와 인구 10만명당 발생률을 나타낸 표로, 사망자수 (주간합계), 인구 10만명당 발생률로 구성되있습니다.</caption>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>구분</th>
+                                                            <th></th>
+                                                            <th></th>
+                                                            <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>사망자수(주간합계)</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>인구 10만명당 발생률</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="chart_box">
+                                                <button class="weekly_chart_btn">재원 위중증 주간 발생 추이 <span class="text">펼쳐보기</span></button>
+                                                <div class="inner">
+                                                    <h4 class="tit">재원 위중증</h4>
+                                                    <canvas id="weekly_wjj"></canvas>
+                                                    <div class="remarks">
+                                                        <ul>
+                                                            <li><img src="/static/image/chart/bar_legend_2.png" alt="">재원 위중증 환자수 (주간 일평균)</li>
+                                                            <li><img src="/static/image/chart/line_legend_2.png" alt="">인구 10만명당 발생률</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="hdn">
+                                                    <table class="chart_hdn_data wjj_hdn_data">
+                                                        <caption>주간 재원 위중증 환자와 인구 10만명당 발생률을 나타낸 표로, 재원 위중증 환자수 (주간 일평균), 인구 10만명당 발생률로 구성되있습니다.</caption>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>구분</th>
+                                                            <th></th>
+                                                            <th></th>
+                                                            <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>재원 위중증 환자수 (주간 일평균)</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>인구 10만명당 발생률</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="chart_box">
+                                                <button class="weekly_chart_btn">신규 입원 주간 발생 추이 <span class="text">펼쳐보기</span></button>
+                                                <div class="inner">
+                                                    <h4 class="tit">신규 입원</h4>
+                                                    <canvas id="weekly_iwj"></canvas>
+                                                    <div class="remarks">
+                                                        <ul>
+                                                            <li><img src="/static/image/chart/bar_legend_3.png" alt="">신규 입원 환자 수 (주간 합계)</li>
+                                                            <li><img src="/static/image/chart/line_legend_3.png" alt="">인구 10만명당 발생률</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="hdn">
+                                                    <table class="chart_hdn_data iwj_hdn_data">
+                                                        <caption>주간 신규 입원 환자와 인구 10만명당 발생률을 나타낸 표로, 신규 입원 환자 수 (주간 합계), 인구 10만명당 발생률로 구성되있습니다.</caption>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>구분</th>
+                                                            <th></th>
+                                                            <th></th>
+                                                            <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>신규 입원 환자 수 (주간 합계)</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>인구 10만명당 발생률</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="chart_box">
+                                                <button class="weekly_chart_btn">확진 주간 발생 추이 <span class="text">펼쳐보기</span></button>
+                                                <div class="inner">
+                                                    <h4 class="tit">확진</h4>
+                                                    <canvas id="weekly_hjj"></canvas>
+                                                    <div class="remarks">
+                                                        <ul>
+                                                            <li><img src="/static/image/chart/bar_legend_4.png" alt="">확진자수 (주간 합계)</li>
+                                                            <li><img src="/static/image/chart/line_legend_4.png" alt="">인구 10만명당 발생률</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="hdn">
+                                                    <table class="chart_hdn_data hjj_hdn_data">
+                                                        <caption>주간 확진자와 인구 10만명당 발생률을 나타낸 표로, 확진자수 (주간 합계), 인구 10만명당 발생률로 구성되있습니다.</caption>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>구분</th>
+                                                            <th></th>
+                                                            <th></th>
+                                                            <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>확진자수 (주간 합계)</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>인구 10만명당 발생률</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div><!-- list -->
+                                    </div>
+                                </div>
+                            </div><!-- live_right -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Live_container //-->
+
+		<a href="#header" class="btn_top" style="display: none;"><span class="hdn">상단으로 이동</span></a>
+
+		<div class="body_bg"></div>
+<script>
+    function reverseHtmlTitle() {
+        var titleStr = $(document).attr("title");
+
+        var resultStr = "";
+        var titleArr = titleStr.split(">");
+        for(var i = titleArr.length-1; i >= 0; i--) {
+            resultStr += $.trim(titleArr[i]);
+            if(i !== 0) {
+                resultStr += " < "
+            }
+        }
+        $(document).attr("title", resultStr);
+    }
+
+    $(function() {
+        reverseHtmlTitle();
+    });
+</script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-159814989-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-159814989-1');
+</script>
+<script type="text/javascript">
+    (function(w, d, a){
+        w.__beusablerumclient__ = {
+            load : function(src){
+                var b = d.createElement("script");
+                b.src = src; b.async=true; b.type = "text/javascript";
+                d.getElementsByTagName("head")[0].appendChild(b);
+            }
+        };w.__beusablerumclient__.load(a);
+    })(window, document, "//rum.beusable.net/script/b210810e114904u843/2f7b84ef24");
+</script>
+	</div>
+
+    <script>
+        $(function(){
+            WEEK_CHART1_data = {
+                date: ["01월 03주","01월 04주","02월 01주","02월 02주"],
+                total: [248,183,146,187],
+                daily: [0.48,0.35,0.28,0.36]
+            }
+            WEEK_CHART2_data = {
+                date: ["01월 03주","01월 04주","02월 01주","02월 02주"],
+                total: [516,368,272,274],
+                daily: [1.00,0.71,0.53,0.53]
+            }
+            WEEK_CHART3_data = {
+                date: ["01월 03주","01월 04주","02월 01주","02월 02주"],
+                total: [4070,6199,8447,9969],
+                daily: [7.88,12.00,16.36,19.31]
+            }
+            WEEK_CHART4_data = {
+                date: ["01월 03주","01월 04주","02월 01주","02월 02주"],
+                total: [38278,84836,159894,323216],
+                daily: [74.13,164.29,309.64,625.92]
+            }
+
+            chartSeries('weekly_smj','#627071','#4D4D4D','circle', WEEK_CHART1_data);
+            chartSeries('weekly_wjj','#4EA5A8','#288184','rect', WEEK_CHART2_data);
+            chartSeries('weekly_iwj','#4677C2','#2959A4','triangle', WEEK_CHART3_data);
+            chartSeries('weekly_hjj','#706092','#4C3B70','rectRot', WEEK_CHART4_data);
+
+            chartHdnData(WEEK_CHART1_data,'smj_hdn_data');
+            chartHdnData(WEEK_CHART2_data,'wjj_hdn_data');
+            chartHdnData(WEEK_CHART3_data,'iwj_hdn_data');
+            chartHdnData(WEEK_CHART4_data,'hjj_hdn_data');
+
+        });
+
+        $(function() {
+            $('.m_fact li a').each(function() {
+                var $that = $(this);
+                $('.m_news li a').each(function() {
+                    if($that.text() === $(this).text()) {
+                        $that.attr('href', $(this).attr('href'));
+                    }
+                });
+            });
+        });
+    </script>
+
+{% endblock %}
