@@ -16,8 +16,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
-# 인증에 사용할 class 지정
-AUTH_USER_MODEL = 'users.Member'
+# # 인증에 사용할 class 지정
+# AUTH_USER_MODEL = 'users.Member'
 
 # Application definition
 INSTALLED_APPS = [

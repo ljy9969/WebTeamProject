@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/static/main/css/main_sub2.css">
     <link rel="stylesheet" href="/static/main/css/main_sub3.css">
     <link rel="stylesheet" href="/static/main/css/main_sub4.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.14.0/css/all.min.css">
 
     <script src="/static/main/js/jquery-1.11.2.min.js"></script>
     <script src="/static/main/js/main_sub3.js"></script>
@@ -20,39 +21,19 @@
     <script src="/static/main/js/chartjs-plugin-datalabels.min.js"></script>
     <script src="/static/main/js/chart_kr.js?ver=20211101"></script>
 
+
+
+    <script>
+    function link_url(link_url) {
+        document.location.href = link_url;
+    }
+    </script>
+
 {% endblock %}
 
 {% block html_body %}
     <!-- Navigation -->
-    <div class="navigation t_dp_n m_dp_n">
-        <div>
-            <div class="n_left"><h1 class="corona_h1"><a href="/">코로나바이러스감염증-19<span>(COVID-19)</span></a></h1></div>
-            <br><br>
-            <div class="n_right"><a href="/users/login/">로그인</a></div>
-        </div>
-    </div>
-    <br>
-    <!-- // Navigation -->
-    <!-- Header -->
-    <div id="header" class="header">
-        <div>
-                <div id="gnb" class="gnb t_dp_n m_dp_n">
-                    <ul>
-                        <li><a href="/maps/">병원 & 약국</a>
-                        </li>
-                        <li><a href="/guide/">코로나 증상 및 행동지침</a>
-                        </li>
-                        <li><a href="/self-diagnosis/">자가진단</a>
-                        </li>
-                        <li><a href="/bbs/">전문의에게 물어보세요</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- // Header -->
-    <!-- Live_container -->
+
     <div class="mainlive_container" id="content">
         <div class="container">
             <div>
