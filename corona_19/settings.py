@@ -28,9 +28,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
-    'main.apps.MainConfig',   # Main Page
-    'users.apps.UsersConfig', # User Page(log-in, log-out, sign-in)
-    'guide.apps.GuideConfig', # Guide Page(코로나 증상 및 예방 조치)
+    'main.apps.MainConfig',                     # Main Page
+    'users.apps.UsersConfig',                   # User Page(log-in, log-out, sign-in)
+    'guide.apps.GuideConfig',                   # Guide Page(코로나 증상 및 예방 조치)
+    'diagnosis.apps.DiagnosisConfig',           # Diagnosis Page(자가진단)
 ]
 
 MIDDLEWARE = [
@@ -72,7 +73,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'corona_db',
         'USER': 'root',
-        'PASSWORD': 'dlwldus79', # 내 걸로 바꿔 쓰기
+        'PASSWORD': '1234',
         'HOST': '127.0.0.1',
         'PORT': '3306'
     }

@@ -11,5 +11,6 @@ urlpatterns = [
     path('main/', include('main.urls')),                                      # login 후 Home Page
     path('users/', include('users.urls')),                                    # login, 회원가입 page
     path('guide/', include('guide.urls')),                                    # Guide Page(코로나 증상 및 예방 조치)
+    path('diagnosis/', include('diagnosis.urls')),                                 # Diagnosis Page(자가진단)
 ] + static(settings.MEDIA_URL,
            document_root=settings.MEDIA_ROOT)
