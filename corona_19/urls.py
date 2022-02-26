@@ -10,5 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),                                          # Admin Page
     path('main/', include('main.urls')),                                      # login 후 Home Page
     path('users/', include('users.urls')),                                    # login, 회원가입 page
+    path('maps/', include('maps.urls')),
+    path('probbs/',include('pro_bbs.urls'))
 ] + static(settings.MEDIA_URL,
            document_root=settings.MEDIA_ROOT)

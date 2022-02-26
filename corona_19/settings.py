@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
     'users.apps.UsersConfig',
+    'maps.apps.MapsConfig',
+    'pro_bbs.apps.ProBbsConfig',
     'bootstrap4',
 ]
 
@@ -71,7 +73,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'corona_db',
         'USER': 'root',
-        'PASSWORD': '1234',
+        'PASSWORD': 'ckdgus8906!',
         'HOST': '127.0.0.1',
         'PORT': '3306'
     }
