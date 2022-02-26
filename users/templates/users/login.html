@@ -24,9 +24,11 @@
 
   <form method="POST" class="login-form">
     {% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}"> <!-- 로그인 성공후 이동되는 url -->
     <p><input name="user_name" type="text" placeholder="ID"></p>
     <p><input name="password" type="password" placeholder="Password"></p>
     <p><input type="submit" value="Log In"></p>
+
       <a href="{% url 'users:account' %}">Create a new Account</a>
   </form>
 </div>
