@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block html_header %}
+    <link href="/static/users/css/login.css" rel="stylesheet">
+
+    <style type="text/css">
+     a:link { color: #c71d44; text-decoration: none;}
+     a:visited { color: #c71d44; text-decoration: none;}
+     a:hover { color: #006DD7; text-decoration: underline;}
+    </style>
+
+
+{% endblock %}
+
+
+{% block html_body %}
+
+<br><br><br><br>
+<div class="login">
+  <div class="login-triangle"></div>
+
+  <h2 class="login-header">로그인</h2>
+
+  <form method="POST" class="login-form">
+    {% csrf_token %}
+    <p><input name="user_name" type="text" placeholder="ID"></p>
+    <p><input name="password" type="password" placeholder="Password"></p>
+    <p><input type="submit" value="Log In"></p>
+      <a href="{% url 'users:account' %}">Create a new Account</a>
+  </form>
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
