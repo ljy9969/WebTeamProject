@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block html_header %}
+
+<script>
+function to_diagnosis() {
+    document.location.href = '/diagnosis/'
+}
+</script>
+
+{% endblock %}
+
+{% block html_body %}
+
+<h2>증상 : {{ my_question.question_text }}</h2>
+<br>
+
+<form action="/diagnosis/{{ my_question.id }}/vote/"
+      method="post">
+    {% csrf_token %}
+    {% for choice in my_question.choice_set.all %}
+        <input type="radio" name="choice"
+               id="my_{{ forloop.counter }}"
+               value="{{ choice.id }}">
+        <label for="my_{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+    {% endfor %}
+    <br><br>
+    <input type="submit" value="제출하기">
+    <input type="button" value="질문으로 돌아가기" onclick="to_diagnosis()">
+</form>
+
+{% endblock %}
