@@ -4,7 +4,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -16,7 +15,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
-# # 인증에 사용할 class 지정
+# 인증에 사용할 class 지정
 # AUTH_USER_MODEL = 'users.Member'
 
 # Application definition
@@ -27,9 +26,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main.apps.MainConfig',
-    'users.apps.UsersConfig',
     'bootstrap4',
+    'main.apps.MainConfig',                     # Main Page
+    'users.apps.UsersConfig',                   # User Page(log-in, log-out, sign-in)
+    'maps.apps.MapsConfig',                     # Maps Page(병원 & 약국)
+    'guide.apps.GuideConfig',                   # Guide Page(코로나 증상 및 예방 조치)
+    'diagnosis.apps.DiagnosisConfig',           # Diagnosis Page(자가진단)
 ]
 
 MIDDLEWARE = [
@@ -62,10 +64,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'corona_19.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -76,7 +76,6 @@ DATABASES = {
         'PORT': '3306'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -96,7 +95,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -110,9 +108,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
-# http://127.0.0.1:8000/static/
+# https://docs.djangoproject.com/en/3.2/howto/static-files/
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 

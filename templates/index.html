@@ -2,44 +2,23 @@
 {% load bootstrap4 %}
 
 {% block html_header %}
-    <title>COVID-19</title>
 
-    <link rel="icon" type="image/png" sizes="64x64" href="/static/main/img/header/icon.png">
- 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.14.0/css/all.min.css">
-    <link rel="stylesheet" href="/static/main/css/main_sub2.css">
-    <link rel="stylesheet" href="/static/main/css/main_sub3.css">
-    <link rel="stylesheet" href="/static/main/css/main_sub4.css">
-
-    <script src="/static/main/js/jquery-1.11.2.min.js"></script>
-    <script src="/static/main/js/main_sub3.js"></script>
-    <script src="/static/main/js/main_sub1.js"></script>
-    <script src="/static/main/js/main_sub4.js"></script>
-
-    <link rel="stylesheet" href="/static/main/css/main.css">
-    <script src="/static/main/js/Chart.min.js"></script>
-    <script src="/static/main/js/chartjs-plugin-datalabels.min.js"></script>
-    <script src="/static/main/js/chart_kr.js?ver=20211101"></script>
-
-
-
-    <script>
-    function link_url(link_url) {
-        document.location.href = link_url;
-    }
-    </script>
+<script>
+function link_url(link_url) {
+    document.location.href = link_url;
+}
+</script>
 
 {% endblock %}
 
 {% block html_body %}
-    <!-- Navigation -->
 
+    <!-- Live_container -->
     <div class="mainlive_container" id="content">
         <div class="container">
             <div>
                 <div class="liveboard_layout">
                     <div class="m_con_layout">
-                        <h2 class="hdn">홈페이지 정보콘텐츠</h2>
                         <!-- // 슬라이드 배너 시작 -->
                         <div class="m_popupzone">
                             <div class="slide_btn">
@@ -52,7 +31,7 @@
                             <div class="slide_list">
                                 <div class="slide_list">
                                     <ul>
-                                        <li><a target="_blank" href=" https://www.kdca.go.kr/board/board.es?mid=a20507020000&amp;bid=0019&amp;act=view&amp;list_no=718596&amp;tag=&amp;nPage=1  "><img alt="코로나19 확진을 받은 환자 및 밀접접촉자 (가족, 동거인)을 위한 안내문 자세히 보기" sizes="500x500" src="/static/main/img/banner/banner2 - 복사본.jpg" /></a></li><li><a target="_blank" href=" https://youtu.be/RO8H8Fjahp0 "><img alt="누구나 따라할 수 있어요! 코로나19 자가검사키트 사용법과 행동요령 (식품의약품안전처, 질병관리청)" src="/static/main/img/banner/banner3 - 복사본.jpg" /></a></li><li><a target="_blank" href=" https://www.youtube.com/embed/kdca?list=PLQ1C5YbGRe_ICEIyhKlFv5CrENv38quKk&amp;autoplay=1 "><img alt="코로나 바이러스감염증-19 정부대응발표 LIVE 시청 가능! 자세히보기" src="/static/main/img/banner/banner4 - 복사본.jpg" /></a></li><li><a target="_blank" href=" http://www.mohw.go.kr/react/al/sal0301vw.jsp?PAR_MENU_ID=04&amp;MENU_ID=0403&amp;page=1&amp;CONT_SEQ=370247 "><img alt="내일부터 ‘거리두기’ 조정 실시(2.19~3.13)" src="/static/main/img/banner/banner1.png - 복사본" /></a></li>
+                                        <li><a target="_blank" href=" http://www.mohw.go.kr/react/al/sal0301vw.jsp?PAR_MENU_ID=04&amp;MENU_ID=0403&amp;page=1&amp;CONT_SEQ=370413 "><img alt="모든 시설 방역패스 적용 해제 및 선별진료소 음성확인서 발급 중단(3.1~)" src="/static/main/img/banner/banner1.png" /></a></li><li><a target="_blank" href=" https://www.kdca.go.kr/board/board.es?mid=a20507020000&amp;bid=0019&amp;act=view&amp;list_no=718596&amp;tag=&amp;nPage=1  "><img alt="코로나19 확진을 받은 환자 및 밀접접촉자 (가족, 동거인)을 위한 안내문 자세히 보기" src="/static/main/img/banner/banner2.jpg" /></a></li><li><a target="_blank" href=" https://youtu.be/RO8H8Fjahp0 "><img alt="누구나 따라할 수 있어요! 코로나19 자가검사키트 사용법과 행동요령 (식품의약품안전처, 질병관리청)" src="/static/main/img/banner/banner3.jpg" /></a></li><li><a target="_blank" href=" https://www.youtube.com/embed/kdca?list=PLQ1C5YbGRe_ICEIyhKlFv5CrENv38quKk&amp;autoplay=1 "><img alt="코로나 바이러스감염증-19 정부대응발표 LIVE 시청 가능! 자세히보기" src="/static/main/img/banner/banner4.jpg" /></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -61,7 +40,7 @@
                     </div>
                     <!-- // 예방접종 현황 시작 -->
                     <div class="vaccineNum">
-                        <h2 class="title1">예방접종현황<span class="livedate">(02.21. 00시 기준, '21.2.26. 이후 누계, 단위: %, 명)</span><a href="https://ncv.kdca.go.kr/mainStatus.es?mid=a11702000000" class="more" target="_blank" title="새창">자세히보기</a></h2>
+                        <h2 class="title1">예방접종현황<span class="livedate">(02.21. 00시 기준, '21.2.26. 이후 누계, 단위: %, 명)</span></h2>
                         <div>
                             <div class="vaccine_list">
                                 <div class="inner cl_b_aftr">
@@ -98,33 +77,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="child_list">
-                                <div class="item"><span>청소년 접종률</span></div>
-                                <div class="inner cl_b_aftr">
-                                    <div class="box">
-                                        <ul>
-                                            <li class="object"><span>1차접종</span></li>
-                                            <li class="percent">82.3<span>%</span></li>
-                                        </ul>
-                                        <ul>
-                                            <li class="old"><span>16-18세</span></li>
-                                            <li class="person"><span>1차접종</span>89.8%</li>
-                                            <li class="person"><span>2차접종</span>87.3%</li>
-                                        </ul>
-                                    </div>
-                                    <div class="box">
-                                        <ul>
-                                            <li class="object"><span>2차접종</span></li>
-                                            <li class="percent">78.6<span>%</span></li>
-                                        </ul>
-                                        <ul>
-                                            <li class="old"><span>13-15세</span></li>
-                                            <li class="person"><span>1차접종</span>75.1%</li>
-                                            <li class="person"><span>2차접종</span>70.2%</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <!-- // 예방접종 현황 종료 -->
@@ -134,7 +86,7 @@
                             <div class="live_left">
                                 <!-- // 발생현황 시작 -->
                                 <div class="occurrenceStatus">
-                                    <h2 class="title1">발생현황<span class="livedate">(2.21. 00시 기준, '20.1.3. 이후 누계, 단위: 명)</span><a href="http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun=" class="more" target="_blank" title="새창">자세히보기</a></h2>
+                                    <h2 class="title1">발생현황<span class="livedate">(2.21. 00시 기준, '20.1.3. 이후 누계, 단위: 명)</span></h2>
                                     <div class="occur_graph">
                                         <table class="ds_table">
                                             <colgroup>
@@ -420,9 +372,6 @@
     </div>
     <!-- Live_container //-->
 
-		<a href="#header" class="btn_top" style="display: none;"><span class="hdn">상단으로 이동</span></a>
-
-		<div class="body_bg"></div>
 <script>
     function reverseHtmlTitle() {
         var titleStr = $(document).attr("title");

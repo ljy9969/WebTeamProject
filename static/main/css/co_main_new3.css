@@ -176,7 +176,7 @@ table.ds_table tbody tr:last-of-type td:last-of-type{border-bottom-right-radius:
 /*예방접종현황*/
 .vaccineNum{margin-top: 20px;}
 .vaccineNum > div{ overflow: hidden; border-radius: 7px; overflow: hidden; box-shadow: 0px 6px 10px #00000012; }
-.vaccine_list{background: #fff;  overflow: hidden; width: 675px; float: left; position: relative; }
+.vaccine_list{background: #fff;  overflow: hidden; width: 100%; float: left; position: relative; }
 .vaccine_list:after{content:""; display: block; position: absolute; right:0px; top:0px; width: 1px; height: 38px; background:#1B70C5;}
 .vaccineNum .vaccine_list *{ }
 .vaccineNum .vaccine_list .box{float: left; width: 33.333%;  position: relative; }
@@ -210,65 +210,6 @@ table.ds_table tbody tr:last-of-type td:last-of-type{border-bottom-right-radius:
 	.vaccineNum .vaccine_list li.person{float: none; width: 100%; padding-left: 0}
 	.vaccineNum .vaccine_list li.person span{position: static; padding-right: 5px}
 }
-
-/*청소년접종률*/
-.child_list{float: right; width: 505px; min-height: 100px; position: relative}
-.child_list:before{content: ''; position: absolute; left: 0 ;top: 50%; width: 1px; height: 36px; background: rgba(112,112,112,.4); z-index: 1}
-.child_list .item{font-size: 18px;font-weight: 500; text-align: center; background: #14589D; padding: 10px; color:#fff; position: relative}
-.child_list .item:before{content: ''; position: absolute; left: 0; top: 0; width:  26px; height: 100%; background: transparent linear-gradient(270deg, #00000000 0%, #000000 100%) 0% 0% no-repeat padding-box; opacity: .1;}
-.child_list .box{float: left; width: 50%; background: #fff; padding: 25px 10px; text-align: center; position: relative; min-height: 100px}
-.child_list .box:before{content: '';position: absolute; left: 0; bottom: 25px; width: 1px; height: 15px; background: rgba(112,112,112,.2); display: none}
-.child_list .box + .box:before{display: block}
-.child_list ul{overflow: hidden; display: block; text-align: center;}
-.child_list .box ul:FIRST-CHILD{padding-left:65px;}
-.child_list li{display: inline-block}
-.child_list ul:nth-of-type(1) li + li {margin-left: 5px}
-.child_list ul:nth-of-type(2) li + li {margin-left: 22px}
-.child_list li.object{padding: 3px 10px; border-radius: 10px; background:#637D98; color:#fff; font-size: 13px; transform: translateY(-6px)}
-.child_list li.object span{vertical-align: middle}
-.child_list li.percent{font-size: 28px; font-family:'Spoqa Han Sans'; font-weight: 700; letter-spacing: 0.035em; color: #14589D}
-.child_list li.percent span{font-size: 15px; margin-left:  2px; font-weight: 300; color:#686868}
-.child_list li.old{font-size: 14px ;font-weight: 500; color: #686868; position: absolute; left: 23px; top: 34px;}
-.child_list li.old + .person{margin-left: 0px;} 
-.child_list li.person{font-size: 14px; font-weight: 500; font-family:'Spoqa Han Sans'; color: #333; letter-spacing: 0.015em}
-.child_list li.person span{color: #9a9a9a; font-size: 13px; padding-right: 5px }
-
-@media (max-width:1179px){
-	.child_list{width:100%}
-	.child_list:before{display: none}
-	.child_list .box ul:FIRST-CHILD{padding-left: 0px;}
-	.child_list li.old{position: relative; left:0px; top:0px; margin-right: 22px;}
-	.vaccineNum .vaccine_list ul{max-width: 200px;}
-}
-
-@media (max-width:768px) {
-	.child_list ul:nth-of-type(2){margin-top: 8px}
-	.child_list ul:nth-of-type(2) li + li{margin-left: 5px}
-	.child_list li.old{display: block; margin-bottom: 5px; position: relative; left:0px; top:0px; }
-	.child_list .box ul:FIRST-CHILD{padding-left: 0px; }
-	.vaccineNum .vaccine_list li.percent{float: none; width: 100%; margin-bottom: 15px;  }
-	.vaccineNum .vaccine_list li.person{float: none; width: 100%; padding-left: 0px;}
-	.vaccineNum .vaccine_list li.person span{position: relative; display: inline-block; padding-right: 10px;}
-	.vaccineNum .vaccine_list li.person.sixty_up{padding-left: 0px;}
-	.vaccine_list:after{display: none;}
-	.vaccineNum .vaccine_list .box.sixty_up li.person:last-child{padding-left: 0px;}
-}
-
-@media (max-width:500px) {
-	.child_list .item{font-size: 14px}
-	.child_list .box{padding:  10px 5px}
-	.child_list .box:before{height: 30px; bottom: 10px}
-	.child_list li.object{transform: none; font-size: 12px;}
-	.child_list li.percent{font-size: 20px; display: block; margin-top: 3px;}
-	.child_list ul:nth-of-type(2){margin-top: 10px}
-	.child_list ul:nth-of-type(2) li + li{margin-left: 0}
-	.child_list li.person{float: left; width: 50%;}
-	.child_list li.person span{display: block}
-
-
-}
-
-/*청소년접종률*/
 /*예방접종현황*/
 
 /*병상현황*/
@@ -285,7 +226,6 @@ table.ds_table tbody tr:last-of-type td:last-of-type{border-bottom-right-radius:
 .liveboard_layout .liveQlinkOuter {width:100%; position:relative; display:table; padding-top:25px; z-index:2}
 
 .quick_banner_new{overflow: hidden; border-radius: 5px; position: relative}
-.quick_banner_new:before{content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 1px; background: rgba(112,112,112,.2); z-index: 1;}
 .quick_banner_new:after{content: ''; position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background: rgba(112,112,112,.2); z-index: 1;}
 .quick_banner_new > li {float: left; width:50%; position: relative}
 .quick_banner_new > li > a {position:relative; display:table; padding:8px 8px 8px 60px; width: 100%; height:68px; background: #fff}
@@ -294,15 +234,11 @@ table.ds_table tbody tr:last-of-type td:last-of-type{border-bottom-right-radius:
 .quick_banner_new > li:nth-child(even) > a:before{background: #4EA5A8; }
 .quick_banner_new > li:nth-child(odd) > a:before{background: #4677C2; }
 .quick_banner_new > li > a:after{content: ''; position: absolute; left: 25px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px;}
-.quick_banner_new > li:nth-of-type(4) > a:after{ background: url('../image/main/quick_icon_1.png') no-repeat center/contain; }
-.quick_banner_new > li:nth-of-type(3) > a:after{ background: url('../image/main/quick_icon_2.png') no-repeat center/contain; }
-.quick_banner_new > li:nth-of-type(2) > a:after{ background: url('../image/main/quick_icon_3.png') no-repeat center/contain; }
-.quick_banner_new > li:nth-of-type(1) > a:after{ background: url('../image/main/quick_icon_4.png') no-repeat center/contain; }
-.quick_banner_new > li:nth-of-type(5) > a:after{ background: url('../image/main/quick_icon_5.png') no-repeat center/contain; }
+.quick_banner_new > li:nth-of-type(2) > a:after{ background: url('/static/main/img/main/quick_icon_3.png') no-repeat center/contain; }
+.quick_banner_new > li:nth-of-type(1) > a:after{ background: url('/static/main/img/main/quick_icon_4.png') no-repeat center/contain; }
 .quick_banner_new > li > a > span  {font-size:15px; line-height:24px; font-weight:700; color:#000; vertical-align:middle; word-break:keep-all; letter-spacing:-0.075em; display: block; position: absolute ; width: calc(100% - 77px); top: 46%; transform: translateY(-50%); right: 8px; }
-.quick_banner_new > li:nth-of-type(1) > a > span ,.quick_banner_new > li:nth-of-type(4) > a > span{top: 50%}
 .quick_banner_new > li:nth-of-type(1) > a > span{line-height: 17px; font-size: 14px}
-.quick_banner_new > li:nth-of-type(4) > a > span{font-size: 14px; line-height: 18px}
+.quick_banner_new > li:nth-of-type(2) > a > span{line-height: 17px; font-size: 14px}
 .quick_banner_new > li > a > span em {font-size: 13px; font-weight: 400;  color:#666; letter-spacing: -0.15em; word-break: break-all; line-height: 13px}
 .quick_banner_new > li > a .ico_window{display: none;}
 
@@ -634,35 +570,19 @@ table.ds_table tbody tr:last-of-type td:last-of-type{border-bottom-right-radius:
 .m_popupzone .slide_btn .slide_control a.btn_pause{background-image:url(/static/main/img/main/ico_pause.png)}
 
 @media (min-width:1180px) {
-	/*.m_popupzone { width:480px; height:180px; margin-right:20px;}*/
-	.m_popupzone { width:100%; height:180px; margin-right:20px;}
+	.m_popupzone { width:100%; height:440px; margin-right:20px;}
 	.m_popupzone .slide_list,
-	.m_popupzone .slide_list *:not(img) {width:100%; height:180px; z-index: 0;}
+	.m_popupzone .slide_list *:not(img) {width:100%; height:200px; z-index: 0;}
 	.m_popupzone .slide_list ul li img {height:100%;}
-	.m_popupzone .slide_btn [class^="btn_"]{z-index:1 !important;}	
+	.m_popupzone .slide_btn [class^="btn_"]{z-index:1 !important;}
 }
-/*@media (min-width:768px) and (max-width:1179px) {*/
-/*	.m_popupzone {width:100%;  height:auto; overflow:hidden}*/
-/*	.m_popupzone .slide_list,*/
-/*	.m_popupzone .slide_list * {width:100%;}	*/
-/*	.m_popupzone .slide_list ul li img {max-width:100%;}*/
-/*}*/
-@media (min-width:1180px) and (max-width:1179px) {
+@media (min-width:1180px) {
 	.m_popupzone {width:100%;  height:auto; overflow:hidden}
 	.m_popupzone .slide_list,
 	.m_popupzone .slide_list * {width:100%;}
 	.m_popupzone .slide_list ul li img {max-width:100%;}
 }
-/*@media (max-width:767px) {*/
-/*	.m_popupzone {width:100%;height:auto;margin:0;float:none;}*/
-/*	.m_popupzone .slideBox {width:100%;}*/
-/*	.m_popupzone .slideBox ul li {}*/
-/*	.m_popupzone .slide_list,*/
-/*	.m_popupzone .slide_list * {height:auto;width:100%;}		*/
-/*	.m_popupzone .slide_list ul li img {width:100% !important;}*/
-/*	.m_popupzone .slide_btn [class^="btn_"] {top:40%;}*/
-/*}*/
-@media (max-width:1180px) {
+@media (min-width:1180px) {
 	.m_popupzone {width:100%;height:auto;margin:0;float:none;}
 	.m_popupzone .slideBox {width:100%;}
 	.m_popupzone .slideBox ul li {}
