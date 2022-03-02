@@ -16,12 +16,11 @@
               <col style="width:80%" />
             </colgroup>
             <tr>
-              <th scope="row">증상</th>
-              <td class="ta_l"><ul class="s_listin_mdot mgt0">
+              <th scope="row" style="font-size:20px">증상</th>
+              <td class="ta_l"><ul class="s_listin_mdot mgt0"></ul>
                 <ul>
                 {% for question in q_list %}
-                    <li><a href="/diagnosis/{{ question.id }}/" style="color:black">{{ question.question_text }}</a></li><br>
-                    <li>{{ question.choice_text }}</li><br>
+                    <li><a href="/diagnosis/{{ question.id }}/" style="color:black; font-size:17px;">{{ question.question_text }}</a></li><br>
                 {% endfor %}
                 </ul>
               </td>
@@ -30,25 +29,5 @@
         </div>
     </div>
 </div>
-
-<!--    {% for choice in c_list.choice_set.all %}-->
-<!--        <input type="radio" name="choice"-->
-<!--               id="my_{{ forloop.counter }}"-->
-<!--               value="{{ choice.id }}">-->
-<!--        <label for="my_{{ forloop.counter }}">{{ choice.choice_text }}</label><br>-->
-<!--    {% endfor %}-->
-
-<!--<form action="/diagnosis/"-->
-<!--      method="post">-->
-<!--    {% csrf_token %}-->
-<!--    {% for choice in my_question.choice_set.all %}-->
-<!--        <input type="radio" name="choice"-->
-<!--               id="my_{{ forloop.counter }}"-->
-<!--               value="{{ choice.id }}">-->
-<!--        <label for="my_{{ forloop.counter }}">{{ choice.choice_text }}</label><br>-->
-<!--    {% endfor %}-->
-<!--    <br><br>-->
-<!--    <input type="submit" value="투표하기">-->
-<!--</form>-->
 
 {% endblock %}
