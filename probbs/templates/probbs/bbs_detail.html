@@ -4,6 +4,7 @@
 {% block html_header %}
 
 <meta name="viewport" content="width=800, user-scalable=yes">
+<link rel="stylesheet" href="/static/probbs/css/style.css">
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
 <script type="text/javascript">
@@ -92,21 +93,24 @@ $(document).ready(function(){
                     </div>
                 </div>
                 {% if request.user == question.author %}
-                <div class="my-3">
-                    <a href="{% url 'probbs:modify_question' question.id  %}"
-                       class="btn btn-sm btn-outline-secondary">수정</a>
-                    <a href="{% url 'probbs:delete_question' question.id  %}"
-                       class="btn btn-sm btn-outline-secondary">삭제</a>
-                </div>
+
                 {% endif %}
                 <div class="row my-3">
-                    <div class="col-1"> <!-- 추천영역 -->
-                        <div class="bg-light text-center p-3 border font-weight-bolder mb-1"
-                             style="position: relative; left: 1400%; ">{{question.question_like_count.count}}</div>
+                    <div > <!-- 추천영역 -->
+                         {% if request.user == question.author %}
+                            <a href="{% url 'probbs:modify_question' question.id  %}"
+                               class="btn btn-sm btn-outline-secondary" style="position: relative; left: 1%; top: 78%">수정</a>
+                            <a href="{% url 'probbs:delete_question' question.id  %}"
+                               class="btn btn-sm btn-outline-secondary" style="position: relative; left: 1%;top: 78%">삭제</a>
+                        {% endif %}
+{#                        <div class="my-1">#}
+                        <div class=" p-3  font-weight-bolder "
+                             style="position: relative; left: 93.5%; ">{{question.question_like_count.count}}</div>
                         <a href="#" data-uri="{% url 'probbs:like_question' question.id  %}"
                            class="recommend btn btn-sm btn-block my-1"
-                           style="position: relative; left: 1400%; background-color: #d14040f2;
+                           style="position: relative; left: 92%; background-color: #d14040f2;
                            color: white; font-size: 11px;">추천</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -19,4 +19,7 @@ def pos_hospital(request):
     # alldata = Post.objects.all()
 
     return render(request, 'maps/positions.html')
-                  # {'data': data})
+
+
+def test(request):
+    return render(request, 'maps/test.html')
