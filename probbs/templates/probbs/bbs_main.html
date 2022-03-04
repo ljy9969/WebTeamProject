@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block html_header %}
+<link rel="stylesheet" href="/static/probbs/css/style.css">
+<script type='text/javascript'>
+$(document).ready(function(){
+    $(".page-link").on('click', function() {
+        $("#page").val($(this).data("page"))
+        $("#searchForm").submit()
+    })
+
+    $("#btn_search").on('click', function() {
+        $("#kw").val($(".kw").val())
+        $("#page").val(1)
+        $("#searchForm").submit()
+    })
+})
+</script>
+{% endblock %}
+
+{% block html_body %}
+
+<section class="notice">
+<div class="page-title">
+    <div class="container">
+        <h3>전문의에게 물어보세요</h3>
+    </div>
+</div>
+
+<!-- board seach area -->
+
+<!-- board list area -->
+<div id="board-list">
+    <div class="container">
+        <table class="board-table">
+            <thead>
+            <tr>
+                <th scope="col" class="th-num">번호</th>
+                <th scope="col" class="th-title">제목</th>
+                <th scope="col" class="th-date">작성자</th>
+                <th scope="col" class="th-date">등록일</th>
+                <th scope="col" class="th-date">조회수</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if question_list %}
+            {% for question in question_list %}
+            <tr>
+                <td>{{ question.id }}</td>
+                <td style="text-align: left; padding: 15px;"><a href="{% url 'probbs:detail' question.id %}">{{ question.title|truncatechars:30 }}</a>
+                    {% if question.comments %}
+                    <span style="color: red">&nbsp;[{{ question.comments }}]</span>
+                    {% endif %}
+                </td>
+                <td>{{ question.author.username }}</td>
+                {% if question.created_string == False %}
+                <td>{{ question.create_date|date:'m월 d일' }}</td>
+                {% else %}
+                <td>{{ question.created_string }}</td>
+                {% endif %}
+                <td>{{ question.views }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<div id="board-search">
+    <div class="container">
+        <div class="search-window" style="background-color: white;">
+            <div>
+                <a href="{% url 'probbs:question_create' %}" class="btn btn-sm">글쓰기</a>
+            </div>
+
+                <div class="search-wrap">
+                    <label for="search" class="blind">공지사항 내용 검색</label>
+                    <input id="search" type="text" class="form-control kw" placeholder="검색어를 입력해주세요." value="{{ kw|default_if_none:'' }}">
+                    <button type="button" class="btn btn-dark" id="btn_search">검색</button>
+                </div>
+
+        </div>
+    </div>
+</div>
+</section>
+    <ul class="pagination justify-content-center" style="padding: 50px;">
+        <!-- 이전페이지 -->
+        {% if question_list.has_previous %}
+        <li class="page-item">
+            <a class="page-link" data-page="{{ question_list.previous_page_number }}" href="#">&laquo;</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">&laquo;</a>
+        </li>
+        {% endif %}
+        <!-- 페이지리스트 -->
+        {% for page_number in question_list.paginator.page_range %}
+        {% if page_number >= question_list.number|add:-3 and page_number <= question_list.number|add:3 %}
+            {% if page_number == question_list.number %}
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" data-page="{{ page_number }}" href="#">{{ page_number }}</a>
+            </li>
+            {% else %}
+            <li class="page-item">
+                <a class="page-link" data-page="{{ page_number }}" href="#">{{ page_number }}</a>
+            </li>
+            {% endif %}
+        {% endif %}
+        {% endfor %}
+        <!-- 다음페이지 -->
+        {% if question_list.has_next %}
+        <li class="page-item">
+            <a class="page-link" data-page="{{ question_list.next_page_number }}" href="#">&raquo;</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">&raquo;</a>
+        </li>
+        {% endif %}
+    </ul>
+    <!-- 페이징처리 끝 -->
+    <form id="searchForm" method="get" action="{% url 'probbs:index' %}">
+    <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
+    <input type="hidden" id="page" name="page" value="{{ page }}">
+</form>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block html_header %}
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/moduels/exporting.js"></script>
+<script src="https://code.highcharts.com/moduels/export-data.js"></script>
+<style>
+graph-container-01{
+    width:300px;
+    height:500px;
+}
+</style>
+{% endblock %}
+
+{% block html_body %}
+<div id="graph-container-01"></div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+var width = 500;
+var height = 800;
+
+d3.request("/static/maps/csv/month_last.csv")
+                .mimeType("text/csv;charset=euc-kr")
+                .response(function (xhr) {
+                    return d3.csvParse(xhr.responseText)
+                })
+                .get(function (data) {
+                    console.log(data)
+                    var data_list = []
+                    for (let i = 0; i < data.length; i++) {
+                        data_list.push(Number(data[i].누적확진자수))
+                    }
+                    console.log(data_list)
+
+                    Highcharts.chart('graph-container-01',{
+
+                        title: {
+                            text:'Corona'
+                        },
+                        subtitle: {
+                            text:'감염자'
+                        },
+                        yAxis: {
+                            title: {
+                                text:'누적 감염자 수'
+                            }
+                        },
+                        legend:{
+                            layout: 'vertical',
+                            align:'right',
+                            verticalAlign:'middle'
+                        },
+
+                        series: [{
+                            name:'point',
+                            data: data_list
+                        }]
+                    })
+
+                })
+{% comment %}
+
+Highcharts.chart('graph-container-01',{
+
+    title: {
+        text:'Corona'
+    },
+    subtitle: {
+        text:'감염자'
+    },
+    yAxis: {
+        title: {
+            text:'누적 감염자 수'
+        }
+    },
+    legend:{
+        layout: 'vertical',
+        align:'right',
+        verticalAlign:'middle'
+    },
+
+    series: [{
+        name:'point',
+        data:
+    }]
+})
+{% endcomment %}
+
+</script>
+{% endblock %}

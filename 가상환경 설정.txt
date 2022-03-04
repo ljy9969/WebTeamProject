@@ -5,6 +5,9 @@ pip install mysqlclient
 conda install pillow
 conda install pip
 pip install django-bootstrap4
+pip install django-debug-toolbar
+pip install django-hitcount
+
 
 
 (mygrations files delete)
