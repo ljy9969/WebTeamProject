@@ -20,6 +20,3 @@ def pos_hospital(request):
 
     return render(request, 'maps/positions.html')
 
-
-def test(request):
-    return render(request, 'maps/test3.html')

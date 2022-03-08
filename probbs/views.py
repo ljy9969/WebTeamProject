@@ -59,6 +59,7 @@ def detail(request, question_id):
 
 
 @login_required(login_url='users:login')
+@permission_required('can_create_doctor', login_url=reverse_lazy('probbs:index'))
 def create_comment(request, question_id):
     post = get_object_or_404(Question, id=question_id)
     author = request.POST.get('author')
@@ -101,7 +102,7 @@ def delete_comment(request, question_id):
 
 
 @login_required(login_url='users:login')
-@permission_required('can_create_doctor', login_url=reverse_lazy('probbs:index'))
+# @permission_required('can_create_doctor', login_url=reverse_lazy('probbs:index'))
 def question_create(request):
     if request.method == 'POST':
         form = QuestionForm(request.POST)

@@ -34,8 +34,8 @@ INSTALLED_APPS = [
     'diagnosis.apps.DiagnosisConfig',
     'guide.apps.GuideConfig',
     'bootstrap4',
-    'debug_toolbar',
-    'hitcount',
+
+
 ]
 
 MIDDLEWARE = [
@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'corona_db',
         'USER': 'root',
-        'PASSWORD': 'ckdgus8906!',
+        'PASSWORD': '1234',
         'HOST': '127.0.0.1',
         'PORT': '3306'
     }
@@ -118,7 +118,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-INTERNAL_IPS = ['127.0.0.1']
+
 # Static files (CSS, JavaScript, Images)
 # http://127.0.0.1:8000/static/
 STATIC_URL = '/static/'
