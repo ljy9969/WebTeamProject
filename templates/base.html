@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <link rel="icon" type="image/png" sizes="64x64" href="/static/main/img/header/icon.png">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.14.0/css/all.min.css">
 
     <link rel="stylesheet" href="/static/main/css/co_common.css">
@@ -28,6 +29,11 @@
     <script src="/static/main/js/chartjs-plugin-datalabels.min.js"></script>
     <script src="/static/main/js/chart_kr.js"></script>
 
+<script>
+function link_url(link_url) {
+    document.location.href = link_url;
+}
+</script>
 {% block html_header %}
 
 {% endblock %}
@@ -37,7 +43,7 @@
      <!-- Navigation -->
     <div class="navigation t_dp_n m_dp_n">
         <div>
-            <div class="n_left"><h1 class="corona_h1"><a href="/">코로나바이러스감염증-19<span>(COVID-19)</span></a></h1></div>
+            <div class="n_left"><h1 class="corona_h1"><a href="/">코로나바이러스감염증-19<span> (COVID-19)</span></a></h1></div>
             <br><br>
             <div class="n_right">
                 <ul class="nino-iconsGroup nav navbar-nav">
@@ -66,7 +72,7 @@
                         </li>
                         <li><a href="/diagnosis/">자가진단</a>
                         </li>
-                        <li><a href="/bbs/">전문의에게 물어보세요</a>
+                        <li><a href={% url 'probbs:index' %}>전문의에게 물어보세요</a>
                         </li>
                     </ul>
                 </div>

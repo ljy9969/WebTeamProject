@@ -1,13 +1,10 @@
 @charset "utf-8";
 *{box-sizing: border-box;}
-/* font-face */
-@font-face {font-family:'Spoqa Han Sans'; font-style:normal; font-weight:400; src:url(../font/SpoqaHanSansRegular.woff2) format('woff2'), url(../font/SpoqaHanSansRegular.woff) format('woff'), url(../font/SpoqaHanSansRegular.ttf) format('truetype');}
-@font-face {font-family:'Spoqa Han Sans'; font-style:normal; font-weight:700; src:url(../font/SpoqaHanSansBold.woff2) format('woff2'), url(../font/SpoqaHanSansBold.woff) format('woff'), url(../font/SpoqaHanSansBold.ttf) format('truetype');}
 
 /*메인 공통*/
 .main_container{}
 .main_embanner { width:100%;}
-.mainlive_container { width:100%; height:auto; overflow:hidden; background-color:#EEEFEF; padding-bottom: 20px;}
+.mainlive_container { width:100%; height:auto; overflow:hidden; background-color: white; padding-bottom: 20px;}
 .mainlive_container > .container > div { padding-bottom:25px;}
 @media (min-width:1180px) {
 	.mainlive_container > .container > div { padding:0;}
@@ -171,9 +168,44 @@ table.ds_table tbody tr:last-of-type td:last-of-type{border-bottom-right-radius:
 
 }
 
-/*예방접종현황 및 병상현황 layout*/
-
 /*예방접종현황*/
+/*.vaccineNum{margin-top: 20px;}*/
+/*.vaccineNum > div{ overflow: hidden; border-radius: 7px; overflow: hidden; box-shadow: 0px 6px 10px #00000012; }*/
+/*.vaccine_list{background: #fff;  overflow: hidden; width: 100%; float: left; position: relative; }*/
+/*.vaccine_list:after{content:""; display: block; position: absolute; right:0px; top:0px; width: 1px; height: 38px; background:#1B70C5;}*/
+/*.vaccineNum .vaccine_list *{ }*/
+/*.vaccineNum .vaccine_list .box{float: left; width: 33.333%;  position: relative;}*/
+/*.vaccineNum .vaccine_list .box + .box + .box.sixty_up ul{overflow: visible; margin-top:-10px;}*/
+/*.vaccineNum .vaccine_list .box + .box + .box.sixty_up ul .percent{margin-top: 50px;}*/
+/*.vaccineNum .vaccine_list .box > div:nth-of-type(2){min-height: 100px; background: #fff; padding: 20px 10px; padding-bottom:20px; text-align: center;}*/
+/*.vaccineNum .vaccine_list .box:FIRST-CHILD > div:nth-of-type(2){padding-left: 20px;}*/
+/*.vaccineNum .vaccine_list ul{ position: relative;  width: 100%; overflow: hidden; display: inline-block; margin: auto}*/
+/*.vaccineNum .vaccine_list li{color:#777;}*/
+/*.vaccineNum .vaccine_list .item{font-size: 18px;font-weight: 500; text-align: center; background: #1B70C5; padding: 10px; color:#fff; }*/
+/*.vaccineNum .vaccine_list li.percent{font-size: 28px; font-family:'Spoqa Han Sans'; font-weight: 700; letter-spacing: 0.035em; float: left; width: 80px; color: #0E62B5; transform: translateY(5px)}*/
+/*.vaccineNum .vaccine_list li.percent span{font-size: 15px; margin-left:  2px; font-weight: 300; color:#686868}*/
+/*.vaccineNum .vaccine_list li.person{font-size: 20px; padding-left: 90px; position: relative; line-height: 25px; font-family:'Spoqa Han Sans'; letter-spacing: 0.015em; color:#222; font-weight: 500; float: none; width: calc(100% - 90px)}*/
+/*.vaccineNum .vaccine_list .box.sixty_up li.person:last-child{padding-left:55px; color:#222;}*/
+/*.vaccineNum .vaccine_list .box + .box + .box li.person + .person + .person{display:none;} */
+/*.vaccineNum .vaccine_list .box + .box + .box.sixty_up li.person + .person + .person{display:block;} */
+/*.vaccineNum .vaccine_list li.person span{position: absolute; left: 0; top: 0; font-size: 12px; color:#686868}*/
+/*.vaccineNum .vaccine_list .box.sixty_up li.person:last-child span{color:#686868;}*/
+/*.vaccineNum .vaccine_list li.person img{ vertical-align: middle; }*/
+/*.vaccineNum .vaccine_list li + li{margin-top: 3px;}*/
+/*@media (max-width:1179px){*/
+/*	.vaccine_list{width:100%}*/
+/*	.vaccineNum .vaccine_list .box:FIRST-CHILD > div:nth-of-type(2){padding-left: 10px;}*/
+/*}*/
+
+/*@media (max-width:500px) {*/
+/*	.vaccineNum .vaccine_list .item{font-size: 14px}*/
+/*	.vaccineNum .vaccine_list .box > div:nth-of-type(2){padding: 15px 5px; min-height: inherit}*/
+/*	.vaccineNum .vaccine_list ul{width: inherit}*/
+/*	.vaccineNum .vaccine_list li.percent{float: none; width: 100%; font-size: 20px; transform: none; margin-bottom: 5px}*/
+/*	.vaccineNum .vaccine_list li.person{float: none; width: 100%; padding-left: 0}*/
+/*	.vaccineNum .vaccine_list li.person span{position: static; padding-right: 5px;}*/
+/*}*/
+
 .vaccineNum{margin-top: 20px;}
 .vaccineNum > div{ overflow: hidden; border-radius: 7px; overflow: hidden; box-shadow: 0px 6px 10px #00000012; }
 .vaccine_list{background: #fff;  overflow: hidden; width: 100%; float: left; position: relative; }
@@ -182,17 +214,17 @@ table.ds_table tbody tr:last-of-type td:last-of-type{border-bottom-right-radius:
 .vaccineNum .vaccine_list .box{float: left; width: 33.333%;  position: relative; }
 .vaccineNum .vaccine_list .box + .box + .box.sixty_up ul{overflow: visible; margin-top:-10px;}
 .vaccineNum .vaccine_list .box + .box + .box.sixty_up ul .percent{margin-top: 10px;}
-.vaccineNum .vaccine_list .box > div:nth-of-type(2){min-height: 100px; background: #fff; padding: 30px 10px; padding-bottom:20px; text-align: center;}
-.vaccineNum .vaccine_list .box:FIRST-CHILD > div:nth-of-type(2){padding-left: 20px;}
+.vaccineNum .vaccine_list .box > div:nth-of-type(2){min-height: 100px; background: #fff; padding: 25px 10px; padding-bottom:20px; text-align: center;}
+.vaccineNum .vaccine_list .box:FIRST-CHILD > div:nth-of-type(2){padding-left: 50px;}
 .vaccineNum .vaccine_list ul{ position: relative;  width: 100%; overflow: hidden; display: inline-block; margin: auto}
 .vaccineNum .vaccine_list li{color:#777;}
-.vaccineNum .vaccine_list .item{font-size: 18px;font-weight: 500; text-align: center; background: #1B70C5; padding: 10px; color:#fff; }
+.vaccineNum .vaccine_list .item{font-size: 18px;font-weight: 500; text-align: center; background: #a081c5; padding: 10px; color:#fff; }
 .vaccineNum .vaccine_list li.percent{font-size: 28px; font-family:'Spoqa Han Sans'; font-weight: 700; letter-spacing: 0.035em; float: left; width: 80px; color: #0E62B5; transform: translateY(5px)}
 .vaccineNum .vaccine_list li.percent span{font-size: 15px; margin-left:  2px; font-weight: 300; color:#686868}
-.vaccineNum .vaccine_list li.person{font-size: 14px; padding-left: 30px; position: relative; line-height: 16px; font-family:'Spoqa Han Sans'; letter-spacing: 0.015em; color:#222; font-weight: 500; float: right; width: calc(100% - 90px)}
+.vaccineNum .vaccine_list li.person{font-size: 20px; padding-left: 30px; position: relative; line-height: 20px; font-family:'Spoqa Han Sans'; letter-spacing: 0.015em; color:#222; font-weight: 500; float: right; width: calc(100% - 90px)}
 .vaccineNum .vaccine_list .box.sixty_up li.person:last-child{padding-left:55px; color:#222;}
-.vaccineNum .vaccine_list .box + .box + .box li.person + .person + .person{display:none;} 
-.vaccineNum .vaccine_list .box + .box + .box.sixty_up li.person + .person + .person{display:block;} 
+.vaccineNum .vaccine_list .box + .box + .box li.person + .person + .person{display:none;}
+.vaccineNum .vaccine_list .box + .box + .box.sixty_up li.person + .person + .person{display:block;}
 .vaccineNum .vaccine_list li.person span{position: absolute; left: 0; top: 0; font-size: 12px; color:#686868}
 .vaccineNum .vaccine_list .box.sixty_up li.person:last-child span{color:#686868;}
 .vaccineNum .vaccine_list li.person img{ vertical-align: middle; }
@@ -210,35 +242,27 @@ table.ds_table tbody tr:last-of-type td:last-of-type{border-bottom-right-radius:
 	.vaccineNum .vaccine_list li.person{float: none; width: 100%; padding-left: 0}
 	.vaccineNum .vaccine_list li.person span{position: static; padding-right: 5px}
 }
-/*예방접종현황*/
 
-/*병상현황*/
-.hospitalNum{margin-top: 20px;}
-/*.hospitalStatus table.ds_table thead th:nth-of-type(2) span {background:#75A49D; color: #fff;}
-.hospitalStatus table.ds_table thead th:nth-of-type(3) span {background:#6296C4; color: #fff;}
-.hospitalStatus table.ds_table thead th:nth-of-type(4) span {background:#6E6B97; color: #fff;}*/
-.hospitalStatus table.ds_table tbody td{height: 60px;}
-.hospitalStatus table.ds_table tbody th span{line-height: 20px}
 /*예방접종현황*/
 
 
 /* 퀵배너 바로가기 */
-.liveboard_layout .liveQlinkOuter {width:100%; position:relative; display:table; padding-top:25px; z-index:2}
+.liveboard_layout .liveQlinkOuter {width:100%; position:absolute; display:table; padding-top:25px; z-index:2}
 
 .quick_banner_new{overflow: hidden; border-radius: 5px; position: relative}
 .quick_banner_new:after{content: ''; position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background: rgba(112,112,112,.2); z-index: 1;}
 .quick_banner_new > li {float: left; width:50%; position: relative}
 .quick_banner_new > li > a {position:relative; display:table; padding:8px 8px 8px 60px; width: 100%; height:68px; background: #fff}
 .quick_banner_new > li > a:hover span{text-decoration: underline}
-.quick_banner_new > li > a:before{content: ''; position: absolute; left: 15px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; }
+.quick_banner_new > li > a:before{content: ''; position: absolute; left: 165px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; }
 .quick_banner_new > li:nth-child(even) > a:before{background: #4EA5A8; }
 .quick_banner_new > li:nth-child(odd) > a:before{background: #4677C2; }
-.quick_banner_new > li > a:after{content: ''; position: absolute; left: 25px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px;}
+.quick_banner_new > li > a:after{content: ''; position: absolute; left: 175px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px;}
 .quick_banner_new > li:nth-of-type(2) > a:after{ background: url('/static/main/img/main/quick_icon_3.png') no-repeat center/contain; }
 .quick_banner_new > li:nth-of-type(1) > a:after{ background: url('/static/main/img/main/quick_icon_4.png') no-repeat center/contain; }
-.quick_banner_new > li > a > span  {font-size:15px; line-height:24px; font-weight:700; color:#000; vertical-align:middle; word-break:keep-all; letter-spacing:-0.075em; display: block; position: absolute ; width: calc(100% - 77px); top: 46%; transform: translateY(-50%); right: 8px; }
-.quick_banner_new > li:nth-of-type(1) > a > span{line-height: 17px; font-size: 14px}
-.quick_banner_new > li:nth-of-type(2) > a > span{line-height: 17px; font-size: 14px}
+.quick_banner_new > li > a > span  {font-size:15px; line-height:24px; font-weight:700; color:#000; vertical-align:middle; word-break:keep-all; letter-spacing:-0.075em; display: block; position: absolute ; width: calc(100% - 77px); top: 46%; transform: translateY(-50%); left: 220px; right: 8px; }
+.quick_banner_new > li:nth-of-type(1) > a > span{line-height: 17px; font-size: 18px}
+.quick_banner_new > li:nth-of-type(2) > a > span{line-height: 17px; font-size: 18px}
 .quick_banner_new > li > a > span em {font-size: 13px; font-weight: 400;  color:#666; letter-spacing: -0.15em; word-break: break-all; line-height: 13px}
 .quick_banner_new > li > a .ico_window{display: none;}
 
@@ -287,24 +311,7 @@ table.ds_table tbody tr:last-of-type td:last-of-type{border-bottom-right-radius:
 	.liveNum_today *[class^="tit"] { font-size:14px; line-height:40px}
 }
 
-/* 환자현황 - 일간_20200629*/
-.liveNum_today_new { display:table; width:100%; }
-.liveNum_today_new > * { display:table-cell; vertical-align:middle; text-align:center;}
-.liveNum_today_new .tit { position:relative; font-size:14px; font-weight:600; color:#2c322a; background-color:#d7d9d5; padding-right:40px; box-sizing:border-box  }
-.liveNum_today_new .tit::after { content:""; position:absolute; right:-7px; top:50%; display:inline-block; width:0px; height:7px; margin-top:-7px; border-left:7px solid #d7d9d5; border-bottom:7px solid transparent; border-top:7px solid transparent;}
-.liveNum_today_new .datalist {}
-.liveNum_today_new .datalist .subtit { display:inline-block; margin-right:7px;  font-size:13px; line-height:inherit; color:#fff; vertical-align:middle; }
-.liveNum_today_new .datalist .subtit::before {content:""; display:inline-block; width:24px; height:20px; margin-right:3px;vertical-align:middle; }
-.liveNum_today_new .datalist .data { display:inline-block; font-size:19px; font-family:'Spoqa Han Sans'; font-weight:600;  letter-spacing:0; color:#ffd43e; vertical-align:inherit; }/*vertical-align:inherit;*/
-.liveNum_today_new .datalist > ul { display:table; width:100%; height:100%; }
-.liveNum_today_new .datalist > ul > li { display:table-cell; width:50%; background-color:#288000; vertical-align:middle}
-.liveNum_today_new .datalist > ul > li:nth-child(1) { border-right:1px solid #539933; }
-.liveNum_today_new .datalist > ul > li:nth-child(1) .subtit::before { background:url(../image/main/ico_case1.png) no-repeat 0 0;}
-.liveNum_today_new .datalist > ul > li:nth-child(2) .subtit::before { background:url(../image/main/ico_case2.png) no-repeat 0 0;}
 
-/* 환자현황다운로드 20210512 추가*/
-.liveNum_today_new .tit a{position:absolute; top:12px; right:10px; background: url(../image/main/ico_down1.png) no-repeat; display:block; width:21px; height:21px; text-indent:-99999px; z-index:1000}
-.liveNum_today_new .tit a:hover{cursor:pointer; top:15px; transition:all .2s}
 
 @media (min-width:1180px) {
 	.liveNum_today_new  { margin-top:8px; height:42px;}
@@ -557,7 +564,7 @@ table.ds_table tbody tr:last-of-type td:last-of-type{border-bottom-right-radius:
 .m_con_layout { clear:both; width:100%; height:auto; overflow:hidden; padding-top:20px;}
 
 /* main popupzone */
-.m_popupzone{position:relative; float:left; }
+.m_popupzone{position:relative; float:top; }
 .m_popupzone .slide_btn [class^="btn_"] {position:absolute; top:45%; display:block; width:32px; height:32px; z-index:11;}
 .m_popupzone .slide_btn .btn_prev {left:10px;background:url(/static/main/img/main/btn_pre.png) no-repeat;}
 .m_popupzone .slide_btn .btn_next {right:10px;background:url(/static/main/img/main/btn_next.png) no-repeat;}
@@ -616,26 +623,6 @@ table.ds_table tbody tr:last-of-type td:last-of-type{border-bottom-right-radius:
 	.m_newsarea .more{top: 8px}
 }
 
-.m_news {  background-color:#fff;}
-.m_news h3 { color:#145693 }
-.m_news h3 .more {}
-.m_news h4 { display:inline-block; margin-left:10px; padding:0 3px; font-size:14px; font-weight:600; line-height:1.7em; color:#164068; letter-spacing:-0.05em}
-.m_news h4.tit1 {}
-.m_news h4.tit2 {}
-.m_fact { position:relative; background-color:#fff;}
-.m_fact h3 { color:#145693 }
-.m_fact h3 .more {}
-.m_text_list { width:100%; padding:4px 7px;}
-.m_text_list > li { width:100%; padding:3px 0; }
-.m_text_list > li::before { content:"·"; display:inline-block; width:12px; font-size:13px; font-weight:600; line-height:15px; text-align:center; color:#333; vertical-align:top}
-.m_text_list > li a { display:inline-block; max-width:88%; font-size:14px; line-height:16px; color:#222; letter-spacing:-0.05em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
-.m_text_list > li a:hover, .m_text_list > li a:focus{text-decoration: underline}
-.m_text_list > li .ico_new { display:inline-block; margin-left:4px; width:16px; height:16px; font-size:11px; line-height:18px; color:#fff; background-color:#f69622; text-align:center; vertical-align:top; border-radius:100%}
-.m_now_banner { position:absolute; left:0; bottom:0; display:block; width:100%; height:60px; background:url(../image/main/bigbanner_backimg.png) no-repeat right bottom #b78146;}
-.m_now_banner > a { display:block; width:100%; height:100%; padding:18px 0 7px 10px;}
-.m_now_banner .b_tit { display:inline-block; padding-left:30px; font-size:16px; line-height:28px; font-weight:600; color:#fff; background:url(../image/main/bigbanner_icon.png) no-repeat 0 center; }
-.m_fact .ico_window {display:none;}
-.m_news .ico_window { display:none;}
 @media (min-width:1180px) {	
 	.m_now_banner > a { text-align:left;}
 	.m_fact .m_text_list { margin-top:23px;}
@@ -655,6 +642,7 @@ table.ds_table tbody tr:last-of-type td:last-of-type{border-bottom-right-radius:
 /**********************************************************************************
 	힘내라 대한민국
 **********************************************************************************/
+/*
 .victory_korea { clear:both; width:100%; }
 .victory_korea h3 { position:relative; display:block; float:left; width:25%; height:100%; padding:20px; background:url(../image/main/victory_bg.png) no-repeat right center; background-color:#3AA66B;}
 .victory_korea h3 > * {   display:inline-block; color:#ffffff; }
@@ -664,6 +652,7 @@ table.ds_table tbody tr:last-of-type td:last-of-type{border-bottom-right-radius:
 .victory_korea .vod_list > li { float:left; margin-left:1.3333%; width:32%; background-color:#ddd; }
 .victory_korea .vod_list img { max-width:100%;}
 .victory_korea  .ico_window {display:none;}
+*/
 
 @media (min-width:1180px) {	
 	.victory_korea { height:190px;}

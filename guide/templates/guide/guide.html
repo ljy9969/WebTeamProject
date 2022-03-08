@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block html_header %}
+
+{% endblock %}
+
+{% block html_body %}
+
+<div class="container"><!-- main_container -->
+	<div id="content" class="content">
+		<div class="sub_top">
+			<div class="st_title">
+				<div class="fl_l">
+					<h3>코로나19란?</h3>
+				</div>
+			</div>
+		</div>
+		<!-- s: content -->
+		<p class="ta_r mgt36">* 현재까지 알려진 정보(2021년 3월 2일 기준) </p>
+		<h4 class="s_title_1">코로나바이러스감염증-19(COVID-19) 정보</h4>
+		<div class="data_table">
+		  <table>
+			<colgroup>
+			  <col style="width:20%" />
+			  <col style="width:80%" />
+			</colgroup>
+			<tr>
+			  <th scope="row">병원체</th>
+			  <td class="ta_l"><ul class="s_listin_mdot mgt0">
+				<li>Severe Acute Respiratory Syndrome-Coronavirus-2(SARS-CoV-2)</li>
+				<li>Coronaviridae family, Betacoronavirus genus Sarbecovirus subgenus에 속함</li>
+				</ul></td>
+			</tr>
+			<tr>
+			  <th scope="row">전파 경로</th>
+			  <td class="ta_l"><ul class="s_listin_mdot mgt0">
+				<li>주된 전파경로는 감염자의 호흡기 침방울(비말)에 의한 전파</li>
+				<li>사람 간에 전파되며, 대부분의 감염은 감염자가 기침, 재채기, 말하기, 노래 등을할 때 발생한 호흡기 침방울(비말)을다른사람이 밀접접촉(주로 2m 이내)하여 발생</li>
+				<li>현재까지 연구결과에 의하면, 비말 이외, 표면접촉*, 공기 등을 통해서도 전파가 가능하나, 공기전파는 의료기관의에어로졸 생성 시술**, 밀폐된공간에서 장시간 호흡기 비말을 만드는환경***등 특정 환경에서 제한적으로 전파되는 것으로 알려짐
+				  <p class="mgt12">* 감염된 사람과의 직접 접촉(악수 등) 또는 매개체(오염된 물품이나 표면)를 만진 후, 손을 씻기 전 눈, 코, 입 등을 만짐으로 바이러스 전파 </p>
+				  <p class="mgt8">** 에어로졸 생성 시술: 기관지 내시경 검사, 객담 유도, 기관삽관, 심폐소생술, 개방된 객담 흡입, 흡입기 등</p>
+				  <p class="mgt8">*** 환기가 부적절하게 이루어진 노래방, 커피숍, 주점, 실내 운동시설 등에서 감염자와 같이있거나 감염자가 떠난 즉시 그 밀폐공간을 방문한 경우</p>
+				</li>
+				</ul></td>
+			</tr>
+			<tr>
+			  <th scope="row">잠복기</th>
+			  <td class="ta_l"><ul class="s_listin_mdot mgt0">
+				<li>1~14일(평균 5~7일)</li>
+				</ul></td>
+			</tr>
+			<tr>
+			  <th scope="row">진단 기준</th>
+			  <td class="ta_l"><ul class="s_listin_mdot mgt0">
+				<li>환자 : 임상양상에 관계없이 진단을 위한 검사기준에 따라 코로나19 감염이 확인된 자</li>
+				<li>진단을 위한 검사 기준
+				  <ul>
+					<li>코로나19 유전자(PCR) 검출</li>
+					<li>바이러스 분리</li>
+				  </ul>
+				</li>
+				</ul></td>
+			</tr>
+			<tr>
+			  <th scope="row">증상</th>
+			  <td class="ta_l"><ul class="s_listin_mdot mgt0">
+				<li>주요증상 및 징후
+				  <ul>
+					<li>- 임상 증상은 무증상, 경증, 중등증, 중증까지 다양</li>
+					<li>- 주요 증상으로는 발열(37.5℃ 이상), 기침, 호흡곤란, 오한, 근육통, 두통, 인후통, 후각·미각소실
+					  <p>- 그 외에 피로, 식욕감소, 가래, 소화기증상(오심, 구토, 설사 등), 혼돈, 어지러움, 콧물이나 코막힘, 객혈, 흉통, 결막염, 피부 증상 등이 다양하게 나타남</p>
+					</li>
+				  </ul>
+				</li>
+				</ul></td>
+			</tr>
+			<tr>
+			  <th scope="row">치료</th>
+			  <td class="ta_l"><ul class="s_listin_mdot mgt0">
+				<li>특이치료제는 없으며 증상에 따른 해열제, 수액공급, 진해제 등 대증치료</li>
+				<li>호흡 곤란 시 산소를 공급하고 필요한 경우에는 기계호흡이나 체외막 산소공급 등의 처치를 시행</li>
+				<li>산소 치료가 필요한 환자에서 렘데시비르의 효과가 일부 확인되어 우리나라를 포함한 여러 나라에서 긴급 승인이 되었거나, 긴급 승인을 준비 중임특이적인 항바이러스제 없음</li>
+				</ul></td>
+			</tr>
+			<tr>
+			  <th scope="row">치명률</th>
+			  <td class="ta_l"><ul class="s_listin_mdot mgt0">
+				<li>전세계 치명률은 지역, 인구집단연령 구조, 감염 상태 및 기타 요인에 의해 0.1~25%로 다양함</li>
+				<li>전세계 치명률은 0.00%~1.63% (중위값 0.27%)로 보정 후 0.00~1.54%(중위값 0.23%)(Bulletin of the World Health Organization. 2021)(https://www.who.int/bulletin/volumes/99/1/20-265892/en/)</li>
+				</ul></td>
+			</tr>
+			<tr>
+			  <th scope="row">예방</th>
+			  <td class="ta_l"><ul class="s_listin_mdot mgt0">
+				<li>식약처에서 승인된 코로나19 백신(향후 업데이트 예정)</li>
+				<li>올바른 손씻기</li>
+				<li>기침 예절 준수</li>
+				<li>씻지 않은 손으로 눈, 코, 입 만지지 않기</li>
+				<li>주위 환경을 자주 소독하고 환기하기</li>
+				</ul></td>
+			</tr>
+		  </table>
+		</div>
+	</div>
+</div>
+<div class="box_image">
+<img src="/static/main/img/main/코로나 예방수칙.png" alt="코로나19로부터 우리를 지키는 소중하고 확실한 행동수칙 | 거리를 확 띄워요![2m(최소 1m이상)], 어디서나 확 써줘요! (마스크), 비누로 확 씻어요!(30초 이상), 옷소매로 확 막아요!(휴지, 손수건도 OK), 밀폐·밀집·밀접 확 피해요! , 감염병 궁금할 땐 전화해요!( 1339 )" />
+</div>
+{% endblock %}
