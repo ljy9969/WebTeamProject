@@ -22,4 +22,4 @@ def pos_hospital(request):
 
 
 def test(request):
-    return render(request, 'maps/test.html')
+    return render(request, 'maps/test3.html')

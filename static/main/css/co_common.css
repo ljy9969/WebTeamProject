@@ -9,7 +9,7 @@
 /*@font-face {font-family:'Lato'; font-style:normal; font-weight:400; src:url(../font/l_r.woff2) format('woff2'), url(../font/l_r.woff) format('woff')}*/
 /*@font-face {font-family:'Lato'; font-style:normal; font-weight:500; src:url(../font/l_m.woff2) format('woff2'), url(../font/l_m.woff) format('woff')}*/
 /*@font-face {font-family:'Lato'; font-style:normal; font-weight:700; src:url(../font/l_bd.woff2) format('woff2'), url(../font/l_bd.woff) format('woff')}*/
-@font-face {font-family: 'Black Han Sans', sans-serif; url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@500&display=swap');}
+
 /*2021-11-01 임시반영*/
 
 .regional_patient_status_A .rpsa_detail .mapview .cityinfo.total > li:nth-of-type(7) {display: none}
@@ -302,7 +302,7 @@ input[type="text"], input[type="password"], textarea, select {width:100%; transi
 .navigation .n_left {float:left;}
 .navigation .n_right {float:right;}
 
-.navigation .n_left .corona_h1 {font-size:23px; font-weight:500; margin-top:20px;}
+.navigation .n_left .corona_h1 { font-size:23px; font-weight:500; margin-top:20px;}
 .navigation .n_left .corona_h1 span {font-size:18px}
 .navigation .n_left .corona_h1 a {color:#000}
 .navigation .n_right .shim {float:left; padding:15px 0 12px; margin-left:12px;}
@@ -322,7 +322,7 @@ input[type="text"], input[type="password"], textarea, select {width:100%; transi
 .navigation .n_right .country > li:nth-child(2) > a { letter-spacing:-0.03em; font-family:'Dotum'; color:#555; }
 
 /* header */
-.header {position:relative; background-color:#163D78; border-bottom: 1px solid #BFBFBF; }
+.header {position:relative; background-color:#63349b; border-bottom: 1px solid #BFBFBF; }
 .header > div::after {display:block; content:''; clear:both;}
 .header .logo {display:block; }
 .header .logo a {display:block; font-size:20px; font-weight:500; color:#000}

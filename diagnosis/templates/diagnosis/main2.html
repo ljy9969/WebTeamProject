@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+
+{% load bootstrap4 %}
+
+{% block html_header %}
+
+<script>
+    window.setTimeout(function() {
+        $(".alert-auto-dismissible").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove();
+
+            setTimeout('go_diagnosis()', 1)
+
+        });
+    }, 5000);
+
+    function go_diagnosis(){
+        // window.location.href = {% url 'guide:guide' %}
+        window.location.href = '/diagnosis/'
+    }
+</script>
+
+<style>
+h3, input::-webkit-input-placeholder, button {
+  font-family: "roboto", sans-serif;
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+}
+{##bee0ff#}
+h3 {
+  height: 100px;
+  width: 100%;
+  font-weight: bold;
+  font-size: 35px;
+  background: #769fce;
+  color: white;
+  line-height: 265%;
+  text-align: center;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+form {
+  box-sizing: border-box;
+  width: 550px;
+  margin: 30px auto 0;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  padding-bottom: 40px;
+  border-radius: 3px;
+}
+form h1 {
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+input {
+  margin: 40px 25px;
+  width: 50px;
+  display: block;
+  border: none;
+  padding: 10px 0;
+  border-bottom: solid 1px #1abc9c;
+  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
+  background-position: -200px 0;
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  color: #0e6252;
+}
+input:focus, input:valid {
+  box-shadow: none;
+  outline: none;
+  background-position: 0 0;
+}
+input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
+  color: #1abc9c;
+  font-size: 11px;
+  transform: translateY(-20px);
+  visibility: visible !important;
+}
+{##1abc9c#}
+button {
+  border: none;
+  background: #769fce;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  width: 200px;
+  color: white;
+  margin-left: 180px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.follow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50px;
+  background: #03A9F4;
+  display: inline-block;
+  margin: 50px calc(50% - 21px);
+  white-space: nowrap;
+  padding: 13px;
+  box-sizing: border-box;
+  color: white;
+  transition: all 0.2s ease;
+  font-family: Roboto, sans-serif;
+  text-decoration: none;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.2);
+}
+.follow i {
+  margin-right: 20px;
+  transition: margin-right 0.2s ease;
+}
+.follow:hover {
+  width: 134px;
+  transform: translateX(-50px);
+}
+.follow:hover i {
+  margin-right: 10px;
+}
+
+strong {
+    font-weight: bold;
+    font-size: 18px;
+}
+</style>
+
+{% endblock %}
+
+{% block html_body %}
+
+   {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-auto-dismissible alert-dismissible notification-container text-center" role="alert">
+            <span aria-hidden="true"></span>
+            {{ message }}
+        </div>
+    {% endfor %}
+
+            <form action="{% url 'diagnosis:my_views' %}" method="post" class="requires-validation" novalidate>
+<!--            <form action="/diagnosis/test/" class="requires-validation" method="post" novalidate>-->
+                <h3>Self&nbsp;Diagnosis</h3>
+                {% csrf_token %}
+                <div class="col-md-12" style="margin-left: 30px;margin-top: 20px;">
+                <strong>1. 체온이 37.5℃ 이상인가요? </strong>
+                <br><br>
+                <label for="selected0" >예</label>
+                <input id="selected0" type="radio" name="selected0" value="1">
+                <label for="selected0">아니오</label>
+                <input id="selected0" type="radio" name="selected0" value="0">
+                <br><br>
+                <strong>2. 기침을 하나요?</strong>
+                <br><br>
+                <label for="selected1">예</label>
+                <input id="selected1" type="radio" name="selected1" value="1">
+                <label for="selected1">아니오</label>
+                <input id="selected1" type="radio" name="selected1" value="0">
+                <br><br>
+                <strong>3. 숨 쉬기가 곤란한가요?</strong>
+                <br><br>
+                <label for="selected2">예</label>
+                <input id="selected2" type="radio" name="selected2" value="1">
+                <label for="selected2">아니오</label>
+                <input id="selected2" type="radio" name="selected2" value="0">
+                <br><br>
+                <strong>4. 오한이 있나요?</strong>
+                <br><br>
+                <label for="selected3">예</label>
+                <input id="selected3" type="radio" name="selected3" value="1">
+                <label for="selected3">아니오</label>
+                <input id="selected3" type="radio" name="selected3" value="0">
+                <br><br>
+                <strong>5. 근육통이 있나요?</strong>
+                <br><br>
+                <label for="selected4">예</label>
+                <input id="selected4" type="radio" name="selected4" value="1">
+                <label for="selected4">아니오</label>
+                <input id="selected4" type="radio" name="selected4" value="0">
+                <br><br>
+                <strong>6. 두통이 있나요?</strong>
+                <br><br>
+                <label for="selected5">예</label>
+                <input id="selected5" type="radio" name="selected5" value="1">
+                <label for="selected5">아니오</label>
+                <input id="selected5" type="radio" name="selected5" value="0">
+                <br><br>
+                <strong>7. 인후통이 있나요?</strong>
+                <br><br>
+                <label for="selected6">예</label>
+                <input id="selected6" type="radio" name="selected6" value="1">
+                <label for="selected6">아니오</label>
+                <input id="selected6" type="radio" name="selected6" value="0">
+                <br><br>
+                <strong>8. 후각 또는 미각이 소실되었나요?</strong>
+                <br><br>
+                <label for="selected7">예</label>
+                <input id="selected7" type="radio" name="selected7" value="1">
+                <label for="selected7">아니오</label>
+                <input id="selected7" type="radio" name="selected7" value="0">
+                <br><br>
+                </div>
+                <button type="submit">확인하기</button>
+                </div>
+            </form>
+
+{% endblock %}

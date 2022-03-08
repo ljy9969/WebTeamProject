@@ -1,81 +1,50 @@
-function my_func() {
-let my_date = $('<dataTime>').text()
+// Open API 코로나 예방접종 현황
+$(function () {
+    // Open API request URL에 넣을 당일 날짜 생성하는 변수들
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = ('0'+ (today.getMonth() + 1)).slice(-2);
+    const day = ('0' + today.getDate()).slice(-2);
+    const dateString = year + '-' + month + '-' + day;
     $.ajax({
         async: true,
-        url: 'http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json',
-        data: {
-            key: '67c59b547b84d9de7658ebb921457f4c',
-            targetDt: modified_date},
+        url: 'https://api.odcloud.kr/api/15077756/v1/vaccine-stat' + '?page=1&perPage=1&cond%5BbaseDate%3A%3AGT%5D=' + dateString + '&cond%5BbaseDate%3A%3AGTE%5D=' + dateString + '&serviceKey=5efVUPw82kO8VF6ZqPGLMp9zqy%2BqakqBGhELrXviR4QlQ8c7Jq68hU3QRYYtfLkGl2PNXNT0OQcLrxRYwidOPg%3D%3D',
+        data: {},
         method: 'GET',
         timeout: 3000,
         dataType: 'json',
         success: function(result) {
             console.log(result)
-            $('tbody').empty()
-            // <tr>
-            //     <td>순위</td>
-            //     <td>
-            //         <img src=~~~>
-            //     </td>   포스터 이미지
-            //     <td>영화 제목</td>
-            //     <td>개봉일</td>
-            //     <td>누적관람객수</td>
-            //     <td>
-            //         <input type="button" value="삭제" class="btn btn-primary">
-            //     </td> 삭제버튼
-            //     <td>상세보기</td>
-            // </tr>
-            for(let i=0;i<10;i++) {
-                let tr = $('<tr></tr>')
-                let rankTd = $('<td></td>').text(result['boxOfficeResult']['dailyBoxOfficeList'][i]['rank'])
-                let imgTd = $('<td></td>')
-                let searchTitle = result['boxOfficeResult']['dailyBoxOfficeList'][i]['movieNm'] + " 포스터"
-                let img = $('<img />')
-                imgTd.append(img)
+            let img = $('<img />')
+            let imgUrl = "/static/main/img/main/vaccine_up_icon2.png"
+            img.attr('src', imgUrl, 'alt', '')
+            $('.livedate').text("( " + dateString + " 기준, 2021-2-26 이후 누계, 단위: 명 )")
 
-                $.ajax({
-                    async: true,
-                    url: 'https://dapi.kakao.com/v2/search/image',
-                    method: 'GET',
-                    headers: {
-                        Authorization: "KakaoAK " + '1d1912440cd92cf0ce61794b6cb3b7fd'
-                    },
-                    data: {
-                        query: searchTitle
-                    },
-                    timeout: 4000,
-                    dataType: 'json',
-                    success: function(result) {
-                        let imgUrl = result['documents'][0]['thumbnail_url']
-                        img.attr('src', imgUrl)
-                    },
-                    error: function () {
-                        alert('뭔가 이상해요!')
-                    }
-                })
-
-                let titleTd = $('<td></td>').text(result['boxOfficeResult']['dailyBoxOfficeList'][i]['movieNm'])
-                let openTd = $('<td></td>').text(result['boxOfficeResult']['dailyBoxOfficeList'][i]['openDt'])
-                let assAudiTd = $('<td></td>').text(result['boxOfficeResult']['dailyBoxOfficeList'][i]['audiAcc'])
-                let delTd = $('<td></td>')
-                let delBtn = $('<input />').attr('type', 'button').attr('value','삭제')
-                // btn-primary는 파란색, btn-warning는 노란색, btn-info는 초록색, btn-danger는 빨간색
-                delBtn.addClass('btn btn-danger')
-                delBtn.on('click', function() {
-                    $(this).parent().parent().remove()
-                })
-                delTd.append(delBtn)
-                tr.append(rankTd)
-                tr.append(imgTd)
-                tr.append(titleTd)
-                tr.append(openTd)
-                tr.append(assAudiTd)
-                tr.append(delTd)
-                $('tbody').append(tr)
-            }
+            // 소수점 자릿수 설정하는 함수 Ver. 3, toString() & replace()
+            const n11 = result['data'][0]['totalFirstCnt'];
+            const n12 = result['data'][0]['firstCnt'];
+            const n21 = result['data'][0]['totalSecondCnt'];
+            const n22 = result['data'][0]['secondCnt'];
+            const n31 = result['data'][0]['totalThirdCnt'];
+            const n32 = result['data'][0]['thirdCnt'];
+            const cn11 = n11.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+            const cn12 = n12.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+            const cn21 = n21.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+            const cn22 = n22.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+            const cn31 = n31.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+            const cn32 = n32.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+            $('#percent1').text(Math.ceil(result['data'][0]['totalFirstCnt'] / 516255.61)+ "%")
+            $('#person1T').text("누적 " + cn11 + "명")
+            $('#person1N').text("신규 " + cn12 + "명").append(img)
+            $('#percent2').text(Math.ceil(result['data'][0]['totalSecondCnt'] / 516255.61)+ "%")
+            $('#person2T').text("누적 " + cn21 + "명")
+            $('#person2N').text("신규 " + cn22 + "명").append(img)
+            $('#percent3').text(Math.ceil(result['data'][0]['totalThirdCnt'] / 516255.61)+ "%")
+            $('#person3T').text("누적 " + cn31 + "명")
+            $('#person3N').text("신규 " + cn32 + "명").append(img)
         },
         error: function() {
-            alert('뭔가 이상해요!')
+            alert('Open API(예방접종 현황)가 끌려오지 않습니다!')
         }
     });
-}
+})

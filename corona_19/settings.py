@@ -31,6 +31,8 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'probbs.apps.ProbbsConfig',
     'maps.apps.MapsConfig',
+    'diagnosis.apps.DiagnosisConfig',
+    'guide.apps.GuideConfig',
     'bootstrap4',
     'debug_toolbar',
     'hitcount',
