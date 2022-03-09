@@ -19,7 +19,9 @@ $(function () {
             let img2 = $('<img />')
             let img3 = $('<img />')
             let imgUrl = "/static/main/img/main/vaccine_up_icon2.png"
-            img.attr('src', imgUrl, 'alt', '')
+            img1.attr('src', imgUrl, 'alt', '')
+            img2.attr('src', imgUrl, 'alt', '')
+            img3.attr('src', imgUrl, 'alt', '')
             $('.livedate').text("( " + dateString + " 기준, 2021-2-26 이후 누계, 단위: 명 )")
 
             // 소수점 자릿수 설정하는 함수 Ver. 3, toString() & replace()
