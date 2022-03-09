@@ -322,7 +322,7 @@ input[type="text"], input[type="password"], textarea, select {width:100%; transi
 .navigation .n_right .country > li:nth-child(2) > a { letter-spacing:-0.03em; font-family:'Dotum'; color:#555; }
 
 /* header */
-.header {position:relative; background-color:#63349b; border-bottom: 1px solid #BFBFBF; }
+.header {position:relative; background-color: #693e9d; border-bottom: 1px solid #BFBFBF; }
 .header > div::after {display:block; content:''; clear:both;}
 .header .logo {display:block; }
 .header .logo a {display:block; font-size:20px; font-weight:500; color:#000}

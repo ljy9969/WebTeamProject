@@ -165,63 +165,25 @@ table.ds_table tbody tr:last-of-type td:last-of-type{border-bottom-right-radius:
 	.vaccineHospital > .vH_right{ float: none; width: 100%; }
 }
 @media (max-width: 767px) {
-
 }
 
 /*예방접종현황*/
-/*.vaccineNum{margin-top: 20px;}*/
-/*.vaccineNum > div{ overflow: hidden; border-radius: 7px; overflow: hidden; box-shadow: 0px 6px 10px #00000012; }*/
-/*.vaccine_list{background: #fff;  overflow: hidden; width: 100%; float: left; position: relative; }*/
-/*.vaccine_list:after{content:""; display: block; position: absolute; right:0px; top:0px; width: 1px; height: 38px; background:#1B70C5;}*/
-/*.vaccineNum .vaccine_list *{ }*/
-/*.vaccineNum .vaccine_list .box{float: left; width: 33.333%;  position: relative;}*/
-/*.vaccineNum .vaccine_list .box + .box + .box.sixty_up ul{overflow: visible; margin-top:-10px;}*/
-/*.vaccineNum .vaccine_list .box + .box + .box.sixty_up ul .percent{margin-top: 50px;}*/
-/*.vaccineNum .vaccine_list .box > div:nth-of-type(2){min-height: 100px; background: #fff; padding: 20px 10px; padding-bottom:20px; text-align: center;}*/
-/*.vaccineNum .vaccine_list .box:FIRST-CHILD > div:nth-of-type(2){padding-left: 20px;}*/
-/*.vaccineNum .vaccine_list ul{ position: relative;  width: 100%; overflow: hidden; display: inline-block; margin: auto}*/
-/*.vaccineNum .vaccine_list li{color:#777;}*/
-/*.vaccineNum .vaccine_list .item{font-size: 18px;font-weight: 500; text-align: center; background: #1B70C5; padding: 10px; color:#fff; }*/
-/*.vaccineNum .vaccine_list li.percent{font-size: 28px; font-family:'Spoqa Han Sans'; font-weight: 700; letter-spacing: 0.035em; float: left; width: 80px; color: #0E62B5; transform: translateY(5px)}*/
-/*.vaccineNum .vaccine_list li.percent span{font-size: 15px; margin-left:  2px; font-weight: 300; color:#686868}*/
-/*.vaccineNum .vaccine_list li.person{font-size: 20px; padding-left: 90px; position: relative; line-height: 25px; font-family:'Spoqa Han Sans'; letter-spacing: 0.015em; color:#222; font-weight: 500; float: none; width: calc(100% - 90px)}*/
-/*.vaccineNum .vaccine_list .box.sixty_up li.person:last-child{padding-left:55px; color:#222;}*/
-/*.vaccineNum .vaccine_list .box + .box + .box li.person + .person + .person{display:none;} */
-/*.vaccineNum .vaccine_list .box + .box + .box.sixty_up li.person + .person + .person{display:block;} */
-/*.vaccineNum .vaccine_list li.person span{position: absolute; left: 0; top: 0; font-size: 12px; color:#686868}*/
-/*.vaccineNum .vaccine_list .box.sixty_up li.person:last-child span{color:#686868;}*/
-/*.vaccineNum .vaccine_list li.person img{ vertical-align: middle; }*/
-/*.vaccineNum .vaccine_list li + li{margin-top: 3px;}*/
-/*@media (max-width:1179px){*/
-/*	.vaccine_list{width:100%}*/
-/*	.vaccineNum .vaccine_list .box:FIRST-CHILD > div:nth-of-type(2){padding-left: 10px;}*/
-/*}*/
-
-/*@media (max-width:500px) {*/
-/*	.vaccineNum .vaccine_list .item{font-size: 14px}*/
-/*	.vaccineNum .vaccine_list .box > div:nth-of-type(2){padding: 15px 5px; min-height: inherit}*/
-/*	.vaccineNum .vaccine_list ul{width: inherit}*/
-/*	.vaccineNum .vaccine_list li.percent{float: none; width: 100%; font-size: 20px; transform: none; margin-bottom: 5px}*/
-/*	.vaccineNum .vaccine_list li.person{float: none; width: 100%; padding-left: 0}*/
-/*	.vaccineNum .vaccine_list li.person span{position: static; padding-right: 5px;}*/
-/*}*/
-
 .vaccineNum{margin-top: 20px;}
 .vaccineNum > div{ overflow: hidden; border-radius: 7px; overflow: hidden; box-shadow: 0px 6px 10px #00000012; }
-.vaccine_list{background: #fff;  overflow: hidden; width: 100%; float: left; position: relative; }
-.vaccine_list:after{content:""; display: block; position: absolute; right:0px; top:0px; width: 1px; height: 38px; background:#1B70C5;}
+.vaccine_list{background: #fff;  overflow: hidden; width: 830px; float: left; position: relative; }
+.vaccine_list:after{content:""; display: block; position: absolute; right:0px; top:0px; width: 1px; height: 38px; background: #ffffff;}
 .vaccineNum .vaccine_list *{ }
 .vaccineNum .vaccine_list .box{float: left; width: 33.333%;  position: relative; }
 .vaccineNum .vaccine_list .box + .box + .box.sixty_up ul{overflow: visible; margin-top:-10px;}
 .vaccineNum .vaccine_list .box + .box + .box.sixty_up ul .percent{margin-top: 10px;}
-.vaccineNum .vaccine_list .box > div:nth-of-type(2){min-height: 100px; background: #fff; padding: 25px 10px; padding-bottom:20px; text-align: center;}
-.vaccineNum .vaccine_list .box:FIRST-CHILD > div:nth-of-type(2){padding-left: 50px;}
+.vaccineNum .vaccine_list .box > div:nth-of-type(2){min-height: 100px; background: #fff; padding: 30px 10px; padding-bottom:20px; text-align: center;}
+.vaccineNum .vaccine_list .box:FIRST-CHILD > div:nth-of-type(2){padding-left: 20px;}
 .vaccineNum .vaccine_list ul{ position: relative;  width: 100%; overflow: hidden; display: inline-block; margin: auto}
 .vaccineNum .vaccine_list li{color:#777;}
-.vaccineNum .vaccine_list .item{font-size: 18px;font-weight: 500; text-align: center; background: #a081c5; padding: 10px; color:#fff; }
-.vaccineNum .vaccine_list li.percent{font-size: 28px; font-family:'Spoqa Han Sans'; font-weight: 700; letter-spacing: 0.035em; float: left; width: 80px; color: #0E62B5; transform: translateY(5px)}
+.vaccineNum .vaccine_list .item{font-size: 18px;font-weight: 500; text-align: center; background: #a889cb; padding: 10px; color:#fff; }
+.vaccineNum .vaccine_list li.percent{font-size: 28px; font-weight: 700; letter-spacing: 0.035em; float: left; width: 80px; color: #0E62B5; transform: translateY(5px)}
 .vaccineNum .vaccine_list li.percent span{font-size: 15px; margin-left:  2px; font-weight: 300; color:#686868}
-.vaccineNum .vaccine_list li.person{font-size: 20px; padding-left: 30px; position: relative; line-height: 20px; font-family:'Spoqa Han Sans'; letter-spacing: 0.015em; color:#222; font-weight: 500; float: right; width: calc(100% - 90px)}
+.vaccineNum .vaccine_list li.person{font-size: 14px; padding-left: 30px; position: relative; line-height: 16px; font-family:'Spoqa Han Sans'; letter-spacing: 0.015em; color:#222; font-weight: 500; float: right; width: calc(100% - 90px)}
 .vaccineNum .vaccine_list .box.sixty_up li.person:last-child{padding-left:55px; color:#222;}
 .vaccineNum .vaccine_list .box + .box + .box li.person + .person + .person{display:none;}
 .vaccineNum .vaccine_list .box + .box + .box.sixty_up li.person + .person + .person{display:block;}
@@ -242,9 +204,45 @@ table.ds_table tbody tr:last-of-type td:last-of-type{border-bottom-right-radius:
 	.vaccineNum .vaccine_list li.person{float: none; width: 100%; padding-left: 0}
 	.vaccineNum .vaccine_list li.person span{position: static; padding-right: 5px}
 }
-
 /*예방접종현황*/
 
+/*일일 확진자 발생 현황*/
+.child_list{float: right; width: 350px; min-height: 100px; position: relative}
+.child_list:before{content: ''; position: absolute; left: 0 ;top: 50%; width: 1px; height: 36px; background: rgba(112,112,112,.4); z-index: 1}
+.child_list .item{font-size: 18px;font-weight: 500; text-align: center; background: #a889cb; padding: 10px; color:#fff; position: relative}
+.child_list .box{float: left; width: 100%; background: #fff; padding: 25px 10px; text-align: center; position: relative; min-height: 100px}
+.child_list ul{overflow: hidden; display: block; text-align: center;}
+.child_list li{display: inline-block}
+.child_list li.object{padding: 3px 10px; border-radius: 10px; background:#637D98; color:#fff; font-size: 20px; transform: translateY(-6px)}
+.child_list li.percent{font-size: 30px; font-weight: 700; letter-spacing: 0.035em; color: #14589D}
+
+@media (max-width:1179px){
+	.child_list{width:100%}
+	.child_list:before{display: none}
+	.child_list .box ul:FIRST-CHILD{padding-left: 0px;}
+	.vaccineNum .vaccine_list ul{max-width: 200px;}
+}
+
+@media (max-width:768px) {
+	.child_list ul:nth-of-type(2){margin-top: 8px}
+	.child_list ul:nth-of-type(2) li + li{margin-left: 5px}
+	.child_list .box ul:FIRST-CHILD{padding-left: 0px; }
+	.vaccineNum .vaccine_list li.percent{float: none; width: 100%; margin-bottom: 15px;  }
+	.vaccineNum .vaccine_list li.person{float: none; width: 100%; padding-left: 0px;}
+	.vaccineNum .vaccine_list li.person span{position: relative; display: inline-block; padding-right: 10px;}
+	.vaccineNum .vaccine_list li.person.sixty_up{padding-left: 0px;}
+	.vaccine_list:after{display: none;}
+	.vaccineNum .vaccine_list .box.sixty_up li.person:last-child{padding-left: 0px;}
+}
+
+@media (max-width:500px) {
+	.child_list .item{font-size: 14px}
+	.child_list .box{padding:  10px 5px}
+	.child_list .box:before{height: 30px; bottom: 10px}
+	.child_list li.object{transform: none; font-size: 12px;}
+	.child_list li.percent{font-size: 20px; display: block; margin-top: 3px;}
+}
+/*일일 확진자 발생 현황*/
 
 /* 퀵배너 바로가기 */
 .liveboard_layout .liveQlinkOuter {width:100%; position:absolute; display:table; padding-top:25px; z-index:2}

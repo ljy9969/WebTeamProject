@@ -34,8 +34,6 @@ INSTALLED_APPS = [
     'diagnosis.apps.DiagnosisConfig',
     'guide.apps.GuideConfig',
     'bootstrap4',
-
-
 ]
 
 MIDDLEWARE = [
@@ -46,8 +44,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'corona_19.urls'

@@ -4,6 +4,7 @@
 {% block html_header %}
 
 <script src="/static/main/js/vaccineNum.js"></script>
+<script src="/static/main/js/coronaNum.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
 <script src="https://code.highcharts.com/stock/modules/data.js"></script>
@@ -78,10 +79,10 @@
             <div id="outer-container">
             <div id="container"></div>
               <div class="controls">
-                <button class="md-trigger" id="start" style="background-color: #693495">
+                <button class="md-trigger" id="start" style="background-color: #8557ab">
                   Start
-                </button></div>
-
+                </button>
+              </div>
             </div>
             <!-- // 예방접종 현황 시작 -->
             <div class="vaccineNum">
@@ -118,6 +119,18 @@
                                             <li class="person" id="person3N"><span>신규</span>7,253 <img src="/static/main/img/main/vaccine_up_icon2.png" alt=""></li>
                                         </ul>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="child_list">
+                            <div class="item"><span>일일 확진자 발생 현황</span></div>
+                            <div class="inner cl_b_aftr">
+                                <div class="box">
+                                    <ul>
+                                        <br>
+                                        <li class="object" id="livedate2">기준일</li>
+                                        <li class="percent" id="coronaNum">82.9</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
