@@ -12,7 +12,7 @@ $(function () {
         async: true,
         url: 'http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson',
         data: {
-            ServiceKey: '5efVUPw82kO8VF6ZqPGLMp9zqy+qakqBGhELrXviR4QlQ8c7Jq68hU3QRYYtfLkGl2PNXNT0OQcLrxRYwidOPg==',
+            serviceKey: '5efVUPw82kO8VF6ZqPGLMp9zqy+qakqBGhELrXviR4QlQ8c7Jq68hU3QRYYtfLkGl2PNXNT0OQcLrxRYwidOPg==', // Decoding
             pageNo: '1',
             numOfRows: '1',
             startCreateDt: dateStringY,
@@ -24,14 +24,15 @@ $(function () {
         success: function(result) {
             console.log(result)
             $('#livedate2').text((today.getMonth() + 1) + "/" + today.getDate() + " 기준")
-            $(result).find('items').each(function () {
-            const cNum=$(this).find('decideCnt').text()
-            const cNum1 = cNum.split(cNum[7])
-            const cNum2 = (cNum[7]) + (cNum1[1])
-            coronaNum = cNum1[0] - cNum2
-            console.log(cNum1[0], cNum2)
+
+            let nums = $(result).find('decideCnt').text()
+            const cNum1 = nums.substring(0, 7)
+            const cNum2 = nums.substring(7, 15)
+            const coronaNum = cNum1 - cNum2
+
+            console.log(nums, cNum1, cNum2, coronaNum)
+
             $('#coronaNum').text((coronaNum.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")) + "명")
-            });
         },
         error: function() {
             alert('Open API(확진자 현황)가 끌려오지 않습니다!')
