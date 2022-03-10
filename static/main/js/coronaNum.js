@@ -32,7 +32,7 @@ $(function () {
 
             console.log(nums, cNum1, cNum2, coronaNum)
 
-            $('#coronaNum').text((coronaNum.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")) + "명")
+            $('#coronaNum').text((Math.abs(coronaNum).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")) + "명")
         },
         error: function() {
             alert('Open API(확진자 현황)가 끌려오지 않습니다!')
