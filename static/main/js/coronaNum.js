@@ -4,9 +4,10 @@ $(function () {
     const today = new Date();
     const year = today.getFullYear();
     const month = ('0' + (today.getMonth() + 1)).slice(-2);
-    const day = ('0' + today.getDate()).slice(-2);
-    const dateStringT = year + month + day;
-    const dateStringY = year + month + '0' + (day - 1);
+    const tday = ('0' + today.getDate()).slice(-2);
+    const yday = ('0' + (today.getDate() - 1)).slice(-2);
+    const dateStringT = year + month + tday;
+    const dateStringY = year + month + yday;
 
     $.ajax({
         async: true,
@@ -22,6 +23,7 @@ $(function () {
         timeout: 3000,
         dataType: 'XML',
         success: function(result) {
+            console.log(dateStringY, dateStringT)
             console.log(result)
             $('#livedate2').text((today.getMonth() + 1) + "/" + today.getDate() + " 기준")
 
@@ -32,7 +34,7 @@ $(function () {
 
             console.log(nums, cNum1, cNum2, coronaNum)
 
-            $('#coronaNum').text((Math.abs(coronaNum).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")) + "명")
+            $('#coronaNum').text(coronaNum.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + "명")
         },
         error: function() {
             alert('Open API(확진자 현황)가 끌려오지 않습니다!')
